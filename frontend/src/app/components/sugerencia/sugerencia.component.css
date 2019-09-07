@@ -17,7 +17,7 @@
     height:50px;
     background-image: url("../../../assets/pie.jpg");
 }
-#logos{float: right;padding:5px 5px;
+.logos{float: right;padding:5px 5px;
 
 }
 .text-primary{

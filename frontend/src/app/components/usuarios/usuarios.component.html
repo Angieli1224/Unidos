@@ -80,7 +80,7 @@
                   <div class="input-field col s6">
                      <i class="material-icons prefix">work</i>
                      <input type="text" name="trabaja" formControlName="trabaja"
-                        placeholder="¿labora actualmente? Si o No">
+                        placeholder="¿labora actualmente? SI o NO">
                   </div>
                   <div class="input-field col s6">
                      <i class="material-icons prefix">supervisor_account</i>
@@ -92,6 +92,9 @@
                         <button (click)="addUsuario
                         ()" class="btn right">Enviar</button>
                         <button type="button" class="btn right" (click)="resetForm(usuarioForm)">Borrar </button>
+
+                        <button class="btn waves-effect waves-light btn1" type="button"
+                           [routerLink]="['../../inicio']">Inicio<i class="material-icons right"></i></button>
                      </div>
                   </div>
 
@@ -100,20 +103,5 @@
 
          </form>
       </div>
-      <!-- <div class="col s7">
-            <table>
-                <thead>
-                    <th>enlace</th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let usuario of usuarioService.usuario">
-                        <td>{{ usuario.id_enlace }}</td>
-                    </tr>
-
-                  
-                </tbody>
-
-            </table>
-        </div> -->
-
    </div>
+</div>

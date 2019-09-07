@@ -7,17 +7,29 @@
    <div class="row">
       <div class="col m4 center ingresar">
          <form [formGroup]="loginForm">
-            <input type="text" formControlName="identificacion" placeholder="Usuario">
-            <input type="text" formControlName="contrasena" placeholder="Contraseña">
+            <div class="col m2 down ">
+                  <i class="material-icons prefix icono">account_circle</i>
+            </div>
+               
+            <div class="col m10 center">               
+               <input type="text" formControlName="identificacion" placeholder="Usuario">
+            </div>
+            <div class="col m2 left">
+               <i class="material-icons prefix icono">vpn_key</i>
+            </div>
+            <div class="col 10 center">
+                  <input type="text" formControlName="contrasena" placeholder="Contraseña">
+            </div>
+            
             <button class="btn" (click)="acceder()">Ingresar</button>
          </form>
       </div>
 
       <div class="col m8 center registrarse">
-         <h4> Si aun no esta registrado</h4>
-         <h2>Se parte de nosotros</h2>
+         <h4> Si aún no estas Registrado</h4>
+         <h2>Se parte de Nosotros</h2>
 
-         <button class="btn waves-effect waves-light btn1" type="button" >Registrase<i class="material-icons right">send</i> </button>
+         <button class="btn waves-effect waves-light btn1" type="button" [routerLink]="['../enlace']">Registrarse<i class="material-icons right">send</i> </button>
 
       </div>
 
@@ -25,8 +37,8 @@
 
    <div class="row">
       <div id="pie" class="col m12">
-         <img class="responsive-img" id="logos" src="../../../assets/fc.png" alt="logo">
-         <img class="responsive-img" id="logos" src="../../../assets/insta.png" alt="logo">
+         <img class="responsive-img logos"  src="../../../assets/fc.png" alt="logo">
+         <img class="responsive-img logos"  src="../../../assets/insta.png" alt="logo">
       </div>
    </div>
 </div>

@@ -9,6 +9,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { EnlaceComponent } from './components/enlace/enlace.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SugerenciaComponent } from 'src/app/components/sugerencia/sugerencia.component';
+import { AdmonComponent } from './components/admon/admon.component';
 
 @NgModule({
    declarations: [
@@ -16,7 +17,8 @@ import { SugerenciaComponent } from 'src/app/components/sugerencia/sugerencia.co
       UsuariosComponent,
       InicioComponent,
       EnlaceComponent,
-      SugerenciaComponent
+      SugerenciaComponent,
+      AdmonComponent
 
    ],
    imports: [

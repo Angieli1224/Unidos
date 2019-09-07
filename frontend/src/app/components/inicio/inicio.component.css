@@ -5,6 +5,7 @@
 .col.m4{
     background: gray;
     border-radius: 15px;
+
 }
 .col.m12{padding:0px;
 }
@@ -17,9 +18,19 @@
     height:50px;
     background-image: url("../../../assets/pie.jpg");
 }
-#logos{float: right;padding:5px 5px;
+.logos{float: right;padding:5px 5px;
 
 }
 .text-primary{
     color: red;
+}
+input{
+    cursor: pointer;
+    color: white;
+
+}
+.icono{
+    margin: 10px 5px;
+    cursor: pointer;
+    color: white;
 }

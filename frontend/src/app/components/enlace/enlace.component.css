@@ -4,10 +4,13 @@
     height:50px;
     background-image: url("../../../assets/pie.jpg");
 }
-#logos{float: right;padding:5px 5px;
+.logos{float: right;padding:5px 5px;
 
 }
 #enlace{
+    width: 30%; 
+}
+button{
     width: 30%; 
 }
 

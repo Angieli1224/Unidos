@@ -24,10 +24,10 @@ export class InicioComponent {
       sUsuario.$usuario.subscribe(val => {
          if (val) {
             // para admin
-            if (val['identificacion'] == '1114729379') {
-               router.navigate(['']); // cambiar rutas
+            if (val['identificacion'] == '29584935') {
+               router.navigate(['../admon']); // cambiar rutas
             } else {
-               router.navigate(['../sugerencias/crear']);
+               router.navigate(['../inicio']);
             }
          }
       });

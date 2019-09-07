@@ -6,33 +6,38 @@
     </div>
     <div class="row">
         <div class="col m12 center">
-            <h5>Eres importante para nosotros, este espacio es para ti.. cuentanos</h5>
+            <h5>Eres importante para nosotros, este espacio es para ti.. cuéntanos</h5>
             <div class="row">
-                <form class="col s12">
+                <form [formGroup]="sugerenciaForm" class="col s12">
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="material-icons prefix">mode_edit</i>
-                            <input id="input_text" type="text" data-length="10">
+                            <input id="input_text" type="text" formControlName="asunto" data-length="10">
                             <label for="input_text">Asunto:</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                            <textarea id="textarea2" class="materialize-textarea" formControlName="descripcion"
+                                data-length="120"></textarea>
                             <label for="textarea2">Descripción:</label>
                         </div>
                     </div>
                 </form>
             </div>
             <br>
-            <button id="sugerencia" class="btn waves-effect waves-light btn1" type="submit" name="action">Guardar<i
-                    class="material-icons right" [routerLink]="['../inicio']"></i> </button>
+            <!-- <button id="sugerencia" class="btn waves-effect waves-light btn1" type="submit" name="action">Guardar<i
+                    class="material-icons right" [routerLink]="['../../../inicio']"></i> </button> -->
+            <button class="btn waves-effect waves-light btn1" type="button"
+                (click)="resetForm(sugerenciaForm)" [routerLink]="['']" >Enviar<i class="material-icons right"></i></button>
+            <button class="btn waves-effect waves-light btn1" type="button" [routerLink]="['../../inicio']">Inicio<i
+                    class="material-icons right"></i></button>
         </div>
         <div class="row">
             <div id="pie" class="col m12">
-                <img class="responsive-img" id="logos" src="../../../assets/fc.png" alt="logo">
-                <img class="responsive-img" id="logos" src="../../../assets/insta.png" alt="logo">
+                <img class="responsive-img logos" src="../../../assets/fc.png" alt="logo">
+                <img class="responsive-img logos" src="../../../assets/insta.png" alt="logo">
             </div>
         </div>
     </div>
