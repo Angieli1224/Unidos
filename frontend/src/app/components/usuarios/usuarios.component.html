@@ -1,0 +1,119 @@
+<div class="container">
+   <div id="registro1">
+      <div class="row ">
+         <div class="col m12">
+            <img class="responsive-img" src="../../../assets/registro.jpg" alt="logo">
+         </div>
+
+      </div>
+   </div>
+   <div class="row">
+      <div class="col m12">
+         <nav class="nav">
+            <div class="nav-wrapper">
+               <div class="col s12 ">
+                  <a href="usuario" class="breadcrumb datos">Datos personales</a>
+
+               </div>
+            </div>
+         </nav>
+
+         <form [formGroup]="usuarioForm">
+            <div>
+               <div class="row">
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">account_circle</i>
+                     <input type="text" formControlName="nombre" placeholder="Ingrese su nombre">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">account_circle</i>
+                     <input type="text" formControlName="apellido" placeholder="Ingrese su apellido">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">account_circle</i>
+                     <input type="number" formControlName="identificacion" placeholder="Ingrese su identificación">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">vpn_key</i>
+                     <input type="number" formControlName="contrasena" placeholder="Ingrese su contraseña">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">phone</i>
+                     <input type="number" formControlName="telefono" placeholder="Ingrese su telefono">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">home</i>
+                     <input type="text" name="direccion" formControlName="direccion" placeholder="Ingrese su dirección">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">public</i>
+                     <input type="text" name="ciudad" formControlName="ciudad" placeholder="Ingrese su ciudad">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">person_pin_circle</i>
+                     <input type="number" name="comuna" formControlName="comuna" placeholder="Ingrese su comuna">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">account_balance</i>
+                     <input type="text" name="puesto_votacion" formControlName="puesto_votacion"
+                        placeholder="Ingrese su puesto votación">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">account_circle</i>
+                     <input type="number" name="mesa_votacion" formControlName="mesa_votacion"
+                        placeholder="Ingrese su mesa votación">
+                  </div>
+               </div>
+            </div>
+            <div>
+               <div class="row">
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">school</i>
+                     <input type="text" name="nivel_escolaridad" formControlName="nivel_escolaridad"
+                        placeholder="Ingrese su nivel de escolaridad">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">work</i>
+                     <input type="text" name="perfil_ocupacional" formControlName="perfil_ocupacional"
+                        placeholder="Ingrese su perfil ocupacional">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">work</i>
+                     <input type="text" name="trabaja" formControlName="trabaja"
+                        placeholder="¿labora actualmente? Si o No">
+                  </div>
+                  <div class="input-field col s6">
+                     <i class="material-icons prefix">supervisor_account</i>
+                     <input type="number" name="personas_cargo" formControlName="personas_cargo"
+                        placeholder="Ingrese cantidad de personas a cargo">
+                  </div>
+                  <div class="card-action">
+                     <div class="input-field col s12">
+                        <button (click)="addUsuario
+                        ()" class="btn right">Enviar</button>
+                        <button type="button" class="btn right" (click)="resetForm(usuarioForm)">Borrar </button>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+
+         </form>
+      </div>
+      <!-- <div class="col s7">
+            <table>
+                <thead>
+                    <th>enlace</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of usuarioService.usuario">
+                        <td>{{ usuario.id_enlace }}</td>
+                    </tr>
+
+                  
+                </tbody>
+
+            </table>
+        </div> -->
+
+   </div>

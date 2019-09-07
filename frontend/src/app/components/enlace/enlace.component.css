@@ -1,0 +1,26 @@
+
+
+#pie{
+    height:50px;
+    background-image: url("../../../assets/pie.jpg");
+}
+#logos{float: right;padding:5px 5px;
+
+}
+#enlace{
+    width: 30%; 
+}
+
+a {
+    cursor: pointer;
+}
+.text-primary{
+    color: red;
+}
+
+input:valid, textarea:valid {
+    background: white;
+  }
+  input:invalid, textarea:invalid {
+    background:red;
+  }

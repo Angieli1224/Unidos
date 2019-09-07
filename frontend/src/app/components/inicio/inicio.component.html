@@ -1,0 +1,32 @@
+<div class="container">
+   <div class="row ">
+      <div id="header" class="col m12">
+         <img class="responsive-img" src="../../../assets/header.jpg" alt="logo">
+      </div>
+   </div>
+   <div class="row">
+      <div class="col m4 center ingresar">
+         <form [formGroup]="loginForm">
+            <input type="text" formControlName="identificacion" placeholder="Usuario">
+            <input type="text" formControlName="contrasena" placeholder="Contraseña">
+            <button class="btn" (click)="acceder()">Ingresar</button>
+         </form>
+      </div>
+
+      <div class="col m8 center registrarse">
+         <h4> Si aun no esta registrado</h4>
+         <h2>Se parte de nosotros</h2>
+
+         <button class="btn waves-effect waves-light btn1" type="button" >Registrase<i class="material-icons right">send</i> </button>
+
+      </div>
+
+   </div>
+
+   <div class="row">
+      <div id="pie" class="col m12">
+         <img class="responsive-img" id="logos" src="../../../assets/fc.png" alt="logo">
+         <img class="responsive-img" id="logos" src="../../../assets/insta.png" alt="logo">
+      </div>
+   </div>
+</div>
