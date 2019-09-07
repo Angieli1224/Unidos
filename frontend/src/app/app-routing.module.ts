@@ -6,6 +6,7 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { SugerenciaComponent } from 'src/app/components/sugerencia/sugerencia.component';
 import { AdmonComponent } from './components/admon/admon.component'
 
+
 const routes: Routes = [
 
    { path: "", redirectTo: "inicio", pathMatch: "prefix" },
