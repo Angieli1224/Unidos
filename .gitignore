@@ -2,3 +2,5 @@
 # dependencies
 /node_modules
 /bower_components
+/backend/node_modules
+/frontend/node_modules
