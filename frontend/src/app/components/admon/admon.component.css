@@ -1,0 +1,40 @@
+.container{
+    word-wrap:break-word;  
+}
+
+.col.m4{
+    background: gray;
+    border-radius: 15px;
+
+}
+.col.m12{padding:0px;
+}
+
+.btn{
+    margin-bottom: 4%;
+}
+
+#pie{
+    height:50px;
+    background-image: url("../../../assets/pie.jpg");
+}
+.logos{float: right;padding:5px 5px;
+
+}
+.text-primary{
+    color: red;
+}
+input{
+    cursor: pointer;
+    color: white;
+
+}
+.icono{
+    margin: 10px 5px;
+    cursor: pointer;
+    color: white;
+}
+
+nav{
+    background: #37474f;
+}

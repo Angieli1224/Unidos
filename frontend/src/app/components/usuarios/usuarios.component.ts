@@ -3,6 +3,7 @@ import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from 'src/app/models/usuario';
 import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { ciudad } from './data';
 
 declare var M: any;
 
@@ -16,9 +17,10 @@ declare var M: any;
 export class UsuariosComponent {
 
    usuarioForm: FormGroup;
-
+   
    constructor(private usuarioService: UsuarioService, private active: ActivatedRoute) {
-
+    
+      
       this.usuarioForm = new FormGroup({
          nombre: new FormControl(null, Validators.required),
          apellido: new FormControl(null, Validators.required),
@@ -36,16 +38,21 @@ export class UsuariosComponent {
          trabaja: new FormControl(null, Validators.required),
          personas_cargo: new FormControl(null, Validators.required)
       });
+
+      
       this.active.params.subscribe(val => {
          this.usuarioForm.controls['id_enlace'].setValue(val.id_enlace);
       })
+
+      
    }
 
    addUsuario(form: NgForm) {
       this.usuarioService.postUsuario(this.usuarioForm.value)
          .subscribe(res => {
             this.resetForm(form);
-            M.toast({ html: 'Guardado con Éxito' })
+            M.toast({ html: 'Guardado con Éxito' });
+            
          });
    }
 

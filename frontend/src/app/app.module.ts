@@ -10,6 +10,9 @@ import { EnlaceComponent } from './components/enlace/enlace.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SugerenciaComponent } from 'src/app/components/sugerencia/sugerencia.component';
 import { AdmonComponent } from './components/admon/admon.component';
+import { EducativoComponent } from './components/educativo/educativo.component';
+import { OcupacionComponent } from './components/ocupacion/ocupacion.component';
+import { ConsulSugerenciaComponent } from './components/consul-sugerencia/consul-sugerencia.component';
 
 @NgModule({
    declarations: [
@@ -18,7 +21,10 @@ import { AdmonComponent } from './components/admon/admon.component';
       InicioComponent,
       EnlaceComponent,
       SugerenciaComponent,
-      AdmonComponent
+      AdmonComponent,
+      EducativoComponent,
+      OcupacionComponent,
+      ConsulSugerenciaComponent
 
    ],
    imports: [

@@ -46,9 +46,14 @@
                      <input type="text" name="direccion" formControlName="direccion" placeholder="Ingrese su dirección">
                   </div>
                   <div class="input-field col s6">
-                     <i class="material-icons prefix">public</i>
-                     <input type="text" name="ciudad" formControlName="ciudad" placeholder="Ingrese su ciudad">
-                  </div>
+                        <i class="material-icons prefix">public</i>
+                        <label >
+                              <input name="ciudad" type="radio" formControlName="ciudad" value="5d49f67ffd976c10db43e938" />
+                              <span>Cali</span>
+                        </label>
+                        
+                     </div>
+
                   <div class="input-field col s6">
                      <i class="material-icons prefix">person_pin_circle</i>
                      <input type="number" name="comuna" formControlName="comuna" placeholder="Ingrese su comuna">
@@ -89,8 +94,8 @@
                   </div>
                   <div class="card-action">
                      <div class="input-field col s12">
-                        <button (click)="addUsuario
-                        ()" class="btn right">Enviar</button>
+                        <button (click)="addUsuario()" class="btn right"  (click)="resetForm(usuarioForm)">Enviar</button>
+
                         <button type="button" class="btn right" (click)="resetForm(usuarioForm)">Borrar </button>
 
                         <button class="btn waves-effect waves-light btn1" type="button"
@@ -105,3 +110,4 @@
       </div>
    </div>
 </div>
+
