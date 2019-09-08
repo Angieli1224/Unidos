@@ -28,5 +28,9 @@ export class UsuarioService {
       });
    }
 
+   cantpersonas(){
+      return this.http.get(`${this.base}/usuario/cantidad`);
+   }
+
 
 }

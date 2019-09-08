@@ -2,16 +2,14 @@
     word-wrap:break-word;  
 }
 
-.col.m4{
-    background: gray;
-    border-radius: 15px;
 
-}
+
 .col.m12{padding:0px;
 }
 
 .btn{
-    margin-bottom: 4%;
+ margin-bottom: none;
+
 }
 
 #pie{
@@ -37,4 +35,40 @@ input{
 
 nav{
     background: #37474f;
+}
+
+h2{
+    margin-top: 2%;
+}
+
+.otro{
+    background: #37474f;
+}
+
+.otro2{
+ 
+    margin:0%;
+}
+
+.card-panel{
+    padding-left:  8px;
+    padding-right: 8px; 
+   
+}
+
+.col.m4{
+    background: white;
+    border-radius: 15px;
+    margin: 15px;
+   
+}
+
+.col.m7{
+    background: white;
+    border-radius: 15px;
+    margin: 15px;
+}
+a{
+    padding-left:  8px;
+    padding-right: 8px;   
 }

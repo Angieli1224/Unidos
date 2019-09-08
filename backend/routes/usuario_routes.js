@@ -35,14 +35,19 @@ router.get('/enlaces/participantes', (req, res) => {
             detalle: error
          });
       } else {
+         
+         
          res.json(val);
       }
 
    }).catch(error => {
+      
       res.status(500).json({
+         
          mensaje: 'Ocurrió un error inesperado.',
          detalle: error
       });
+      
    });
 
 });
@@ -192,6 +197,9 @@ router.post('/acceso', (req, res) => {
          detalle: error
       });
    });
+
+
+  
 
 });
 

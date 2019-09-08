@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from 'src/app/models/usuario';
 import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ciudad } from './data';
+import { from } from 'rxjs';
 
 declare var M: any;
 
@@ -18,7 +19,7 @@ export class UsuariosComponent {
 
    usuarioForm: FormGroup;
    
-   constructor(private usuarioService: UsuarioService, private active: ActivatedRoute) {
+   constructor(private usuarioService: UsuarioService, private active: ActivatedRoute, private router:Router) {
     
       
       this.usuarioForm = new FormGroup({
@@ -54,6 +55,11 @@ export class UsuariosComponent {
             M.toast({ html: 'Guardado con Éxito' });
             
          });
+         if(this.usuarioForm.get('id_enlace').value=='29584935'){
+            this.router.navigate(['../admon']);
+
+         };
+
    }
 
    resetForm(form?: NgForm) {
