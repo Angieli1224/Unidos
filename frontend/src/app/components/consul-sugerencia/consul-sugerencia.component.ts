@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,8 +15,11 @@ export class ConsulSugerenciaComponent implements OnInit {
   }
 
   mostrar() {
-    this.router.navigate(['../admon/sugenrencia', '29584935']);
+    
+    this.router.navigate(['../usuario', '29584935']);
   }
+  
+
 
 
 }

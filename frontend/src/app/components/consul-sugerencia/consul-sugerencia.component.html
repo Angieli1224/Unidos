@@ -1,1 +1,57 @@
-<p>consul-sugerencia works!</p>
+<div class="container">
+    <div class="row otro2">
+       <div id="header" class="col m12">
+          <img class="responsive-img" src="../../../assets/header.jpg" alt="logo">
+       </div>
+    </div>
+ 
+    <div class="row otro2">
+ 
+       <nav>
+          <div class="nav-wrapper">
+ 
+             <ul class="left hide-on-med-and-down">
+                <li><a (click)="mostrar()"><i class="material-icons left">person_add</i>Registrar Enlace</a></li>
+                <li><a [routerLink]="['../admon/educativo']"><i class="material-icons left">search</i>Perfíl
+                      Educativo</a></li>
+                <li><a [routerLink]="['../admon/ocupacion']"><i class="material-icons left">search</i>Perfíl
+                      Ocupacional</a></li>
+                <li><a [routerLink]="['../admon/sugerencias']"><i class="material-icons left">search</i>Sugerencias</a>
+                </li>
+                <li><a [routerLink]="['']"><i class="material-icons left">close</i>Cerrar Sesión</a></li>
+             </ul>
+          </div>
+       </nav>
+    </div>
+ 
+    <div class="row otro2">
+       <div class="card-panel  col m7 center">
+ 
+          <span class="text-darken-2">
+ 
+             <h4>Ingrese la identificación del Enlace</h4>
+             <input id="enlace" class="center" name="enlace" type="number" title="ingresar la cédula del enlace"
+                maxlength="10" minlength="6">
+               <button (click)="mostrar()" class="btn waves-effect waves-light " type="button" name="action">Consultar<i
+                   class="material-icons right">search</i> </button>
+             <h2>000</h2>
+          </span>
+       </div>
+ 
+       <div class="card-panel  col m4 center">
+ 
+          <span class="text-darken-2">
+ 
+             <h4>Sugerencias</h4>
+             <h2>000</h2>
+          </span>
+       </div>
+       
+ 
+       <div class="row">
+          <div id="pie" class="col m12">
+             <img class="responsive-img logos" src="../../../assets/fc.png" alt="logo">
+             <img class="responsive-img logos" src="../../../assets/insta.png" alt="logo">
+          </div>
+       </div>
+    </div>
