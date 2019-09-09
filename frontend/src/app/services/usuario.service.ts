@@ -25,8 +25,10 @@ export class UsuarioService {
    acceso(Usuario: any) {
       return this.http.post(`${this.base}/usuario/acceso`, Usuario).subscribe(val => {
          this.usuario.next(val);
+   
       });
    }
+
 
    cantpersonas(){
       return this.http.get(`${this.base}/usuario/cantidad`);

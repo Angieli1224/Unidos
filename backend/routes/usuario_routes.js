@@ -163,6 +163,8 @@ router.post('/acceso', (req, res) => {
 
    let body = req.body;
 
+   console.log("este es res");
+     // console.log(res);
    if (!body['identificacion']) {
       res.status(400).json({
          mensaje: 'Se esperaba el campo "identificacion".'
@@ -171,6 +173,8 @@ router.post('/acceso', (req, res) => {
       res.status(400).json({
          mensaje: 'Se esperaba el campo "contrasena".'
       });
+      
+      
    }
 
    Usuario.findOne({ identificacion: body['identificacion'] }).exec().then(usuario => {
