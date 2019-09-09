@@ -1,66 +1,75 @@
 <div class="container">
-    <div class="row otro2">
-       <div id="header" class="col m12">
-          <img class="responsive-img" src="../../../assets/header.jpg" alt="logo">
-       </div>
-    </div>
- 
-    <div class="row otro2">
- 
-         <nav>
-               <div class="nav-wrapper ">
-      
-                  <ul class="left hide-on-med-and-down ">
-                        <li><a  class="menu" [routerLink]="['../../admon']"><i class="material-icons left">home</i>Inicio</a></li>
-                     <li><a class="menu" (click)="mostrar()"><i class="material-icons left">person_add</i>Registrar Enlace</a></li>
-                     <li><a class="menu" [routerLink]="['../../admon/educativo']"><i class="material-icons left">search</i>Perfíl
-                           Educativo</a></li>
-                     <li><a class="menu" [routerLink]="['../../admon/ocupacion']"><i class="material-icons left">search</i>Perfíl
-                           Ocupacional</a></li>
-                     <li><a class="menu" [routerLink]="['../../admon/sugerencias']"><i class="material-icons left">search</i>Sugerencias</a>
-                     </li>
-                     <li><a class="menu" [routerLink]="['']"><i class="material-icons left">close</i>Cerrar Sesión</a></li>
-                  </ul>
-               </div>
-            </nav>
-    </div>
- 
-    <div class="row otro2">
+   <div class="row otro2">
+      <div id="header" class="col m12">
+         <img class="responsive-img" src="../../../assets/header.jpg" alt="logo">
+      </div>
+   </div>
 
-         <h2>Sugerencias</h2>
-         <table class="responsive-table highlight" > 
-            <thead>
-               <tr>
-                  <th>Name</th>
-                  <th>Item Name</th>
-                  <th>Item Price</th>
-               </tr>
-            </thead>
-   
-            <tbody>
-               <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>$0.87</td>
-               </tr>
-               <tr>
-                  <td>Alan</td>
-                  <td>Jellybean</td>
-                  <td>$3.76</td>
-               </tr>
-               <tr>
-                  <td>Jonathan</td>
-                  <td>Lollipop</td>
-                  <td>$7.00</td>
-               </tr>
-            </tbody>
-         </table>
-  
- 
-       <div class="row">
-          <div id="pie" class="col m12">
-             <img class="responsive-img logos" src="../../../assets/fc.png" alt="logo">
-             <img class="responsive-img logos" src="../../../assets/insta.png" alt="logo">
-          </div>
-       </div>
-    </div>
+   <div class="row otro2">
+
+      <nav>
+         <div class="nav-wrapper ">
+
+            <ul class="left hide-on-med-and-down ">
+               <li><a class="menu" [routerLink]="['../../admon']"><i class="material-icons left">home</i>Inicio</a></li>
+               <li><a class="menu" (click)="mostrar()"><i class="material-icons left">person_add</i>Registrar Enlace</a>
+               </li>
+               <li><a class="menu" [routerLink]="['../../admon/educativo']"><i
+                        class="material-icons left">search</i>Perfíl
+                     Educativo</a></li>
+               <li><a class="menu" [routerLink]="['../../admon/ocupacion']"><i
+                        class="material-icons left">search</i>Perfíl
+                     Ocupacional</a></li>
+               <li><a class="menu" [routerLink]="['../../admon/sugerencias']"><i
+                        class="material-icons left">search</i>Sugerencias</a>
+               </li>
+               <li><a class="menu" [routerLink]="['']"><i class="material-icons left">close</i>Cerrar Sesión</a></li>
+            </ul>
+         </div>
+      </nav>
+   </div>
+
+   <div class="row otro2">
+
+      <h2>Sugerencias y reclamos</h2>
+      <table class="responsive-table highlight">
+         <thead>
+            <tr>
+               <th>Usuario</th>
+               <th>Enlance</th>
+               <th>Asunto</th>
+               <th>descripcion</th>
+               <th>Estado</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            <tr>
+               <td>Alvin</td>
+               <td>Eclair</td>
+               <td>$0.87</td>
+            </tr>
+            <tr>
+               <td>Alan</td>
+               <td>Jellybean</td>
+               <td>$3.76</td>
+            </tr>
+            <tr>
+               <td>Jonathan</td>
+               <td>Lollipop</td>
+               <td>$7.00</td>
+            </tr>
+         </tbody>
+
+
+         
+      </table>
+
+
+      <div class="row">
+         <div id="pie" class="col m12">
+            <img class="responsive-img logos" src="../../../assets/fc.png" alt="logo">
+            <img class="responsive-img logos" src="../../../assets/insta.png" alt="logo">
+         </div>
+      </div>
+   </div>

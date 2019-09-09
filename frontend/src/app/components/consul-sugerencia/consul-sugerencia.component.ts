@@ -19,7 +19,4 @@ export class ConsulSugerenciaComponent implements OnInit {
     this.router.navigate(['../usuario', '29584935']);
   }
   
-
-
-
 }
