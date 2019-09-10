@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { SugerenciaComponent } from 'src/app/components/sugerencia/sugerencia.component';
 import { AdmonComponent } from './components/admon/admon.component';
 import { EducativoComponent } from './components/educativo/educativo.component';
-import { OcupacionComponent } from './components/ocupacion/ocupacion.component';
 import { ConsulSugerenciaComponent } from './components/consul-sugerencia/consul-sugerencia.component';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { ConsulSugerenciaComponent } from './components/consul-sugerencia/consul
       SugerenciaComponent,
       AdmonComponent,
       EducativoComponent,
-      OcupacionComponent,
       ConsulSugerenciaComponent
 
    ],

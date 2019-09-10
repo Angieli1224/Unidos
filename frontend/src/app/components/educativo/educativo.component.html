@@ -7,32 +7,52 @@
 
    <div class="row otro2">
 
-         <nav>
-               <div class="nav-wrapper ">
-      
-                  <ul class="left hide-on-med-and-down ">
-                        <li><a  class="menu" [routerLink]="['../../admon']"  ><i class="material-icons left">home</i>Inicio</a></li>
-                     <li><a class="menu" (click)="mostrar()"><i class="material-icons left">person_add</i>Registrar Enlace</a></li>
-                     <li><a class="menu" [routerLink]="['../../admon/educativo']"><i class="material-icons left">search</i>Perfíl
-                           Educativo</a></li>
-                     <li><a class="menu" [routerLink]="['../../admon/ocupacion']"><i class="material-icons left">search</i>Perfíl
-                           Ocupacional</a></li>
-                     <li><a class="menu" [routerLink]="['../../admon/sugerencias']"><i class="material-icons left">search</i>Sugerencias</a>
-                     </li>
-                     <li><a class="menu" [routerLink]="['']"><i class="material-icons left">close</i>Cerrar Sesión</a></li>
-                  </ul>
-               </div>
-            </nav>
+      <nav>
+         <div class="nav-wrapper ">
+
+            <ul class="left hide-on-med-and-down ">
+               <li><a class="menu" [routerLink]="['../../admon']"><i class="material-icons left">home</i>Inicio</a></li>
+               <li><a class="menu" (click)="mostrar()"><i class="material-icons left">person_add</i>Registrar Enlace</a>
+               </li>
+               <li><a class="menu" [routerLink]="['../../admon/educativo']"><i
+                        class="material-icons left">search</i>Perfíl
+                     Educativo y Ocupacional</a></li>
+               <li><a class="menu" [routerLink]="['../../admon/sugerencias']"><i
+                        class="material-icons left">search</i>Sugerencias</a>
+               </li>
+               <li><a class="menu" [routerLink]="['']"><i class="material-icons left">close</i>Cerrar Sesión</a></li>
+            </ul>
+         </div>
+      </nav>
    </div>
 
    <div class="row otro2">
-         <h2>Educativo</h2>
-      <table class="responsive-table highlight" > 
+      <h4 class="center">Pérfil Educativo y Ocupacional </h4>
+      <div class="row otro2 center">
+         <nav>
+            <div class="nav-wrapper">
+               <form>
+                  <div class="input-field">
+                     <input id="search" type="search" placeholder="Ingrese el pérfl Ocupacional" required>
+                     <label  class="label-icon" for="search"><i class="material-icons">search</i></label>
+                     <i class="material-icons">close</i>
+                  </div>
+               </form>
+            </div>
+         </nav>
+         
+      </div>
+      <table class="responsive-table highlight">
          <thead>
             <tr>
-               <th>Name</th>
-               <th>Item Name</th>
-               <th>Item Price</th>
+               <th>Cédula</th>
+               <th>Nombre</th>
+               <th>Apellido</th>
+               <th>Telefono</th>
+               <th>Pérfil Educativo</th>
+               <th>Pérfil Ocupacional</th>
+               <th>Personas a Cargo</th>
+
             </tr>
          </thead>
 
@@ -41,16 +61,28 @@
                <td>Alvin</td>
                <td>Eclair</td>
                <td>$0.87</td>
+               <td>Alvin</td>
+               <td>Eclair</td>
+               <td>$0.87</td>
+               <td>Eclair</td>
             </tr>
             <tr>
-               <td>Alan</td>
-               <td>Jellybean</td>
-               <td>$3.76</td>
+               <td>Alvin</td>
+               <td>Eclair</td>
+               <td>$0.87</td>
+               <td>Alvin</td>
+               <td>Eclair</td>
+               <td>$0.87</td>
+               <td>Eclair</td>
             </tr>
             <tr>
-               <td>Jonathan</td>
-               <td>Lollipop</td>
-               <td>$7.00</td>
+               <td>Alvin</td>
+               <td>Eclair</td>
+               <td>$0.87</td>
+               <td>Alvin</td>
+               <td>Eclair</td>
+               <td>$0.87</td>
+               <td>Eclair</td>
             </tr>
          </tbody>
       </table>
@@ -63,3 +95,9 @@
          </div>
       </div>
    </div>
+
+   <script>
+      $(document).ready(function () {
+         $('.sidenav').sidenav();
+      });
+   </script>

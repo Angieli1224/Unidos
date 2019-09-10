@@ -7,8 +7,6 @@ import { SugerenciaComponent } from 'src/app/components/sugerencia/sugerencia.co
 import { AdmonComponent } from './components/admon/admon.component';
 import {ConsulSugerenciaComponent} from './components/consul-sugerencia/consul-sugerencia.component';
 import {EducativoComponent} from './components/educativo/educativo.component';
-import {OcupacionComponent} from './components/ocupacion/ocupacion.component';
-
 
 const routes: Routes = [
 
@@ -19,8 +17,7 @@ const routes: Routes = [
    { path: "sugerencias/crear", component: SugerenciaComponent },
    { path: "admon", component: AdmonComponent},
    { path: "admon/sugerencias", component: ConsulSugerenciaComponent},
-   { path: "admon/educativo", component: EducativoComponent},
-   { path: "admon/ocupacion", component: OcupacionComponent}
+   { path: "admon/educativo", component: EducativoComponent}
 
 ]
 
