@@ -27,7 +27,9 @@ export class InicioComponent {
             if (val['identificacion'] == '29584935') {
                router.navigate(['../admon']); // cambiar rutas
             } else {
-               router.navigate(['../sugerencias/crear']);
+               console.log(this.loginForm.get('identificacion').value);
+               
+               this.router.navigate(['../sugerencias/crear',this.loginForm.get('identificacion').value]);
             }
          }
       });
@@ -36,7 +38,7 @@ export class InicioComponent {
 
    acceder() {
       this.sUsuario.acceso(this.loginForm.value);
-      console.log( this.sUsuario.acceso(this.loginForm.value));
+      
       
    }
 

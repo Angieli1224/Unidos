@@ -22,7 +22,7 @@ a {
 }
 
 input:valid, textarea:valid {
-    background: white;
+    background: rgb(233, 213, 213)33, 213, 213);
   }
   input:invalid, textarea:invalid {
     background:red;

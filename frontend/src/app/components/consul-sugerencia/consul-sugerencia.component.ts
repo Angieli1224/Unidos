@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {SugerenciaService} from '../../services/sugerencia.service';
+import { Sugerencia } from 'src/app/models/sugerencia';
 
 @Component({
   selector: 'app-consul-sugerencia',
@@ -9,14 +11,26 @@ import { Router } from '@angular/router';
 })
 export class ConsulSugerenciaComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  
+  constructor(private sugerenciaService: SugerenciaService,private router: Router) { }
 
   ngOnInit() {
+
+   this.obtenerSugerencias();
+
   }
 
-  mostrar() {
+  
+  obtenerSugerencias(){
+    this.sugerenciaService.getSugerencias().subscribe(res =>{
     
-    this.router.navigate(['../usuario', '29584935']);
-  }
+    
+      this.sugerenciaService.sugerencias= res as Sugerencia[];
+      console.log( res);
+      
+   
+    }); 
+  };
+ 
   
 }

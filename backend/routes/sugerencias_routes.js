@@ -4,11 +4,12 @@ const router = express.Router();
 const Sugerencia = require('../models/sugerencia_model');
 const Usuario = require('../models/usuario_model');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
 
-   Sugerencia.find({}).populate('id_usuario').populate('id_enlace').exec().then(val => {
-
-      if (!val) {
+   // Sugerencia.find({}).populate('id_usuario').populate('id_enlace').exec().then(val => {
+     await Sugerencia.find({}).exec().then(val => {
+      
+   if (!val) {
          res.status(500).json({
             mensaje: 'Ocurrió un error inesperado.',
             detalle: 'La base de datos no devolvió el registro actualizado.'
@@ -26,17 +27,20 @@ router.get('/', (req, res) => {
 
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
 
    let body = req.body;
+console.log("estes es el id usuario del servidor "+body['id_usuario']);
 
-   Usuario.findOne({ identificacion: body['id_enlace'] }).exec().then(enlace => {
+   await Usuario.findOne({ identificacion: body['id_usuario'] }).exec().then(async usuario => {
 
-      body['id_enlace'] = enlace._id;
+      body['id_enlace'] = usuario.id_enlace;
+      console.log("Este es el usuario que se encontro "+usuario.id_enlace);
+      
 
       let registro = new Sugerencia(body);
 
-      registro.save().then(val => {
+      await registro.save().then(val => {
 
          if (!val) {
             res.status(500).json({
@@ -56,7 +60,12 @@ router.post('/', (req, res) => {
          });
       });
 
-   }).catch(error);
+   }).catch(error => {
+      res.status(500).json({
+         mensaje: 'Ocurrió un error inesperado.',
+         detalle: error
+      });
+   });
 
 });
 

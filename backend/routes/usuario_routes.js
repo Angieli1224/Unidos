@@ -4,7 +4,7 @@ const router = express.Router();
 const Usuario = require('../models/usuario_model');
 
 router.get('/enlaces', (req, res) => {
-
+//con el código 2020 estamos definiendo que el usuario es un enlace
    Usuario.find({ id_enlace: 2020 }).exec().then(val => {
 
       if (val.length == 0) {
@@ -162,9 +162,7 @@ router.put('/actualizar', (req, res) => {
 router.post('/acceso', (req, res) => {
 
    let body = req.body;
-
-   console.log("este es res");
-     // console.log(res);
+   
    if (!body['identificacion']) {
       res.status(400).json({
          mensaje: 'Se esperaba el campo "identificacion".'

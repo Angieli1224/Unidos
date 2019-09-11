@@ -14,7 +14,7 @@ const routes: Routes = [
    { path: "inicio", component: InicioComponent },
    { path: "usuario/:id_enlace", component: UsuariosComponent },
    { path: "enlace", component: EnlaceComponent },
-   { path: "sugerencias/crear", component: SugerenciaComponent },
+   { path: "sugerencias/crear/:id_usuario", component: SugerenciaComponent },
    { path: "admon", component: AdmonComponent},
    { path: "admon/sugerencias", component: ConsulSugerenciaComponent},
    { path: "admon/educativo", component: EducativoComponent}

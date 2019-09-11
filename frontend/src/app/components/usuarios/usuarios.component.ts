@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { UsuarioService } from '../../services/usuario.service';
-import { Usuario } from 'src/app/models/usuario';
 import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ciudad } from './data';

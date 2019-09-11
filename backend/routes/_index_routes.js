@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const usuarioRoutes = require('./usuario_routes');
-const sugerenciasRoutes = require('./sugerencias_routes');
+const sugerenciaRoutes = require('./sugerencias_routes');
 
 
 router.get('/', (req, res) => {
@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 });      
 
 router.use('/usuario',usuarioRoutes); 
-router.use('/sugerencias',sugerenciasRoutes); 
+router.use('/sugerencia',sugerenciaRoutes); 
 
 
 module.exports = router;

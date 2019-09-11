@@ -37,128 +37,17 @@
                <th>Enlance</th>
                <th>Asunto</th>
                <th>descripcion</th>
-               <th>Eliminar</th>
-               
+                             
             </tr>
          </thead>
 
          <tbody>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>dskdsjdas</td>
-               <td>sdhsajdhsjdhsakjdhaskjdasdbmnbm
-                  sdhsajdhsjdhsakjdhaskjdasdjflkdsmmlmflkdmlmfkdsfds
-                  dfdskfdslkfjsdklfjdslkfjldskfjlkdsfjlksdjfldsk
-                  dfjsklfjdslkfjdslkfjdslkfjdslkjflksd
-               </td>
-               <td>visto</td>
-
-            </tr>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>dskdsjdas</td>
-               <td>sdhsajdhsjdhsakjdhaskjdasdjflkdsmmlmflkdmlmfkdsfds
-                  sdhsajdhsjdhsakjdhaskjdasdjflkdsmmlmflkdmlmfkdsfds
-                  dfdskfdslkfjsdklfjdslkfjldskfjlkdsfjlksdjfldsk
-                  dfjsklfjdslkfjdslkfjdslkfjdslkjflksd
-               </td>
-               <td>visto</td>
-            </tr>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>dskdsjdas</td>
-               <td>sdhsajdhsjdhsakjdhaskjdasdjflkdsmmlmflkdmlmfkdsfds
-                  dfdskfdslkfjsdklfjdslkfjldskfjlkdsfjlksdjfldsk
-                  dfjsklfjdslkfjdslkfjdslkfjdslkjflksd
-               </td>
-               <td>visto</td>
-            </tr>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>dskdsjdas</td>
-               <td>sdhsajdhsjdhsakjdhaskjdasdbmnbm
-                  sdhsajdhsjdhsakjdhaskjdasdjflkdsmmlmflkdmlmfkdsfds
-                  dfdskfdslkfjsdklfjdslkfjldskfjlkdsfjlksdjfldsk
-                  dfjsklfjdslkfjdslkfjdslkfjdslkjflksd
-               </td>
-               <td>visto</td>
-
-            </tr>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>dskdsjdas</td>
-               <td>sdhsajdhsjdhsakjdhaskjdasdbmnbm
-                  sdhsajdhsjdhsakjdhaskjdasdjflkdsmmlmflkdmlmfkdsfds
-                  dfdskfdslkfjsdklfjdslkfjldskfjlkdsfjlksdjfldsk
-                  dfjsklfjdslkfjdslkfjdslkfjdslkjflksd
-               </td>
-               <td>visto</td>
-
-            </tr>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>dskdsjdas</td>
-               <td>sdhsajdhsjdhsakjdhaskjdasdbmnbm
-                  sdhsajdhsjdhsakjdhaskjdasdjflkdsmmlmflkdmlmfkdsfds
-                  dfdskfdslkfjsdklfjdslkfjldskfjlkdsfjlksdjfldsk
-                  dfjsklfjdslkfjdslkfjdslkfjdslkjflksd
-               </td>
-               <td>visto</td>
-
-            </tr>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>dskdsjdas</td>
-               <td>sdhsajdhsjdhsakjdhaskjdasdbmnbm
-                  sdhsajdhsjdhsakjdhaskjdasdjflkdsmmlmflkdmlmfkdsfds
-                  dfdskfdslkfjsdklfjdslkfjldskfjlkdsfjlksdjfldsk
-                  dfjsklfjdslkfjdslkfjdslkfjdslkjflksd
-               </td>
-               <td>visto</td>
-
-            </tr>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>dskdsjdas</td>
-               <td>sdhsajdhsjdhsakjdhaskjdasdbmnbm
-                  sdhsajdhsjdhsakjdhaskjdasdjflkdsmmlmflkdmlmfkdsfds
-                  dfdskfdslkfjsdklfjdslkfjldskfjlkdsfjlksdjfldsk
-                  dfjsklfjdslkfjdslkfjdslkfjdslkjflksd
-               </td>
-               <td>visto</td>
-
-            </tr>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>dskdsjdas</td>
-               <td>sdhsajdhsjdhsakjdhaskjdasdbmnbm
-                  sdhsajdhsjdhsakjdhaskjdasdjflkdsmmlmflkdmlmfkdsfds
-                  dfdskfdslkfjsdklfjdslkfjldskfjlkdsfjlksdjfldsk
-                  dfjsklfjdslkfjdslkfjdslkfjdslkjflksd
-               </td>
-               <td>visto</td>
-
-            </tr>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>dskdsjdas</td>
-               <td>sdhsajdhsjdhsakjdhaskjdasdbmnbm
-                  sdhsajdhsjdhsakjdhaskjdasdjflkdsmmlmflkdmlmfkdsfds
-                  dfdskfdslkfjsdklfjdslkfjldskfjlkdsfjlksdjfldsk
-                  dfjsklfjdslkfjdslkfjdslkfjdslkjflksd
-               </td>
-               <td>visto</td>
-
+            <tr *ngFor="let sugerencia of sugerenciaService.sugerencias">
+               <td>{{ sugerencia.id_usuario }}</td>
+               <td>{{ sugerencia.id_enlace }}</td>
+               <td>{{ sugerencia.asunto }}</td>
+               <td>{{ sugerencia.descripcion }}</td>
+               
             </tr>
          </tbody>
 
