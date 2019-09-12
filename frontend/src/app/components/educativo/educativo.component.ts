@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {UsuarioService} from '../../services/usuario.service';
+import {Usuario} from 'src/app/models/usuario';
 
 @Component({
   selector: 'app-educativo',
   templateUrl: './educativo.component.html',
-  styleUrls: ['./educativo.component.css']
+  styleUrls: ['./educativo.component.css'],
+  providers: [UsuarioService]
 })
 export class EducativoComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private usuarioService: UsuarioService ,private router: Router) { }
 
   ngOnInit() {
+    this.obtenerPerfil();
   }
 
   mostrar() {
@@ -22,6 +26,17 @@ export class EducativoComponent implements OnInit {
     
     this.router.navigate(['../admon/sugenrencia']);
   }
+
+  obtenerPerfil(){
+    this.usuarioService.getPerfil().subscribe(res =>{
+    
+    
+      this.usuarioService.usuarios= res as Usuario[];
+      console.log( res);
+      
+   
+    }); 
+  };
 
 
 }

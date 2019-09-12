@@ -9,6 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 export class EnlaceService {
 
    readonly URL_REGISTRO = 'http://localhost:3000';
+   
    constructor(private http: HttpClient) {
       this.http.get(`${this.URL_REGISTRO}/usuario/enlaces`).subscribe(valor => {
          this.enlaces.next(valor);

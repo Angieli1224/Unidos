@@ -57,32 +57,15 @@
          </thead>
 
          <tbody>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>$0.87</td>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>$0.87</td>
-               <td>Eclair</td>
-            </tr>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>$0.87</td>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>$0.87</td>
-               <td>Eclair</td>
-            </tr>
-            <tr>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>$0.87</td>
-               <td>Alvin</td>
-               <td>Eclair</td>
-               <td>$0.87</td>
-               <td>Eclair</td>
+            <tr *ngFor="let usuario of usuarioService.usuarios">
+               <td>{{ usuario.identificacion }}</td>
+               <td>{{ usuario.nombre }}</td>
+               <td>{{ usuario.apellido }}</td>
+               <td>{{ usuario.telefono }}</td>
+               <td>{{ usuario.nivel_escolaridad }}</td>
+               <td>{{ usuario.perfil_ocupacional }}</td>
+               <td>{{ usuario.personas_cargo }}</td>
+                
             </tr>
          </tbody>
       </table>

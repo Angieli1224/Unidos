@@ -1,21 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {UsuarioService} from '../../services/usuario.service'
 
+declare var M: any;
 
 @Component({
   selector: 'app-admon',
   templateUrl: './admon.component.html',
   styleUrls: ['./admon.component.css'],
+  providers:[UsuarioService]
  
 })
 export class AdmonComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  cantidadUsuarios:any;
+  private usuariosXenlace : any;
+
+
+  
+  constructor( private usuariosService: UsuarioService ,private router: Router) { 
+   this.usuariosXenlace = 0;
+  }
 
   ngOnInit() {
 
-
+  this.consultarUsuarios();
   }
 
   mostrar() {
@@ -27,6 +37,30 @@ export class AdmonComponent implements OnInit {
     this.router.navigate(['../admon/sugenrencia']);
   }
 
+  consultarEnlace(){
 
+    var input = document.getElementById('enlace') as HTMLInputElement;
+   
+    if(!input.value){
+      M.toast({ html: 'Ingrese el numero de cédula' })
+      }
+      else {
+    this.usuariosService.cantXenlace(input.value).subscribe(val => {
+      this.usuariosXenlace=val;
+    });
+  }
+  }
+
+  consultarUsuarios(){
+
+    this.usuariosService.cantpersonas().subscribe(res =>{
+      this.cantidadUsuarios=res;
+      console.log("3. componente  res " +  res);
+    });
+    console.log("3. componente  " + this.cantidadUsuarios);
+    
+    
+
+  }
 
 }

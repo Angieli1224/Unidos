@@ -1,6 +1,6 @@
 export class Enlace {
    constructor(idenlace=0){
-       this.idenlace= idenlace;
+       this.id_enlace= idenlace;
    }
-  idenlace:number;
+  id_enlace:number;
 }

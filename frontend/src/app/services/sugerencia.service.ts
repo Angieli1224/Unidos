@@ -26,7 +26,5 @@ export class SugerenciaService {
   postSugerencia(Sugerencia: any) {
     return this.http.post(`${this.base}/sugerencia`, Sugerencia);
  }
- 
-
- 
+  
 }

@@ -76,3 +76,10 @@ a{
 .menu{
     font-size: 10pt ;   
 }
+
+input:valid, textarea:valid {
+    background: green ;
+  }
+  input:invalid, textarea:invalid {
+    background:red;
+  }
