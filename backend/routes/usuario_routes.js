@@ -4,7 +4,7 @@ const router = express.Router();
 const Usuario = require('../models/usuario_model');
 
 router.get('/enlaces', (req, res) => {
-//con el código 2020 estamos definiendo que el usuario es un enlace
+   //con el código 2020 estamos definiendo que el usuario es un enlace
    Usuario.find({ id_enlace: 2020 }).exec().then(val => {
 
       if (val.length == 0) {
@@ -35,19 +35,19 @@ router.get('/enlaces/participantes', (req, res) => {
             detalle: error
          });
       } else {
-         
-         
+
+
          res.json(val);
       }
 
    }).catch(error => {
-      
+
       res.status(500).json({
-         
+
          mensaje: 'Ocurrió un error inesperado.',
          detalle: error
       });
-      
+
    });
 
 });
@@ -162,7 +162,7 @@ router.put('/actualizar', (req, res) => {
 router.post('/acceso', (req, res) => {
 
    let body = req.body;
-   
+
    if (!body['identificacion']) {
       res.status(400).json({
          mensaje: 'Se esperaba el campo "identificacion".'
@@ -171,8 +171,8 @@ router.post('/acceso', (req, res) => {
       res.status(400).json({
          mensaje: 'Se esperaba el campo "contrasena".'
       });
-      
-      
+
+
    }
 
    Usuario.findOne({ identificacion: body['identificacion'] }).exec().then(usuario => {
@@ -200,106 +200,127 @@ router.post('/acceso', (req, res) => {
       });
    });
 
+});
+
+
+router.post('/', (req, res) => {
+
+   let body = req.body;
+   body['trabaja'] = body['trabaja'] == 'SI' ? true : false;
+   let registro = new Usuario(req.body);
+
+   registro.save().then(val => {
+      res.json({
+         msg: 'se guardó'
+      })
+   }).catch(error => {
+      res.status(500).json({
+         mensaje: 'Ocurrió un error inesperado.',
+         detalle: error
+      });
    });
 
-   
-   router.post('/', (req, res) => {
-   
-      let body = req.body;
-      body['trabaja'] = body['trabaja'] == 'SI' ? true : false;
-      let registro = new Usuario(req.body);
-   
-      registro.save().then(val => {
-         res.json({
-            msg: 'se guardó'
-         })
-      }).catch(error => {
-         res.status(500).json({
-            mensaje: 'Ocurrió un error inesperado.',
-            detalle: error
-         });
-      });
-   
-   });
-   
-   router.put('/actualizar', (req, res) => {
-   
-      Usuario.findByIdAndUpdate(req.body.id, req.body.datos).exec().then(val => {
-   
-         if (!val) {
-            res.status(500).json({
-               mensaje: 'Ocurrió un error inesperado.',
-               detalle: 'La base de datos no devolvió el registro actualizado.'
-            });
-         } else {
-            res.json(val);
-         }
-   
-      }).catch(error => {
-         res.status(500).json({
-            mensaje: 'Ocurrió un error inesperado.',
-            detalle: error
-         });
-      });
-   
-   });
-   
-   router.get('/cantidad', async (req, res) => {
+});
 
-       await Usuario.count().exec().then(val => {
-   
-         if (val == 0) {
-            res.status(400).json({
-               mensaje: 'No se encontraron registros que coincidan con los parametros de búsqueda.',
-               detalle: error
-            });
-         } else {
-            res.json(val);
-           
-            
-         }
-   
-      }).catch(error => {
-         res.status(500).json({
-            mensaje: 'Ocurrió un error inesperado.',
-            detalle: error
-         });
-      });
-   
-   });
-   
-   router.post('/cantidad/enlace', async (req, res) => {
-      await Usuario.count({id_enlace : req.body.id_enlace}).exec().then(val => {
-   
-         if (val == 0) {
-            res.status(400).json({
-               mensaje: 'No se encontraron registros que coincidan con los parametros de búsqueda.',
-               detalle: error
-            });
-         } else {
-            res.json(val);
-            console.log("este es la cantidad "+res );
-            
-            
-            
-         }
-   
-      }).catch(error => {
-         res.status(500).json({
-            mensaje: 'Ocurrió un error inesperado.',
-            detalle: error
-         });
-      });
-   
-   });
+router.put('/actualizar', (req, res) => {
 
-   router.get('/perfil', async (req, res) => {
-   await Usuario.find({}).exec().then(val => {
-      
-   if (!val) {
+   Usuario.findByIdAndUpdate(req.body.id, req.body.datos).exec().then(val => {
+
+      if (!val) {
          res.status(500).json({
             mensaje: 'Ocurrió un error inesperado.',
             detalle: 'La base de datos no devolvió el registro actualizado.'
+         });
+      } else {
+         res.json(val);
+      }
+
+   }).catch(error => {
+      res.status(500).json({
+         mensaje: 'Ocurrió un error inesperado.',
+         detalle: error
+      });
+   });
+
+});
+
+router.get('/cantidad', async (req, res) => {
+
+   await Usuario.count().exec().then(val => {
+
+      if (val == 0) {
+         res.status(400).json({
+            mensaje: 'No se encontraron registros que coincidan con los parametros de búsqueda.',
+            detalle: error
+         });
+      } else {
+         res.json(val);
+
+
+      }
+
+   }).catch(error => {
+      res.status(500).json({
+         mensaje: 'Ocurrió un error inesperado.',
+         detalle: error
+      });
+   });
+
+});
+
+router.post('/cantidad/enlace', async (req, res) => {
+   await Usuario.count({ id_enlace: req.body.id_enlace }).exec().then(val => {
+
+      if (val == 0) {
+         res.status(400).json({
+            mensaje: 'No se encontraron registros que coincidan con los parametros de búsqueda.',
+            detalle: error
+         });
+      } else {
+         res.json(val);
+         console.log("este es la cantidad " + res);
+
+
+
+      }
+
+   }).catch(error => {
+      res.status(500).json({
+         mensaje: 'Ocurrió un error inesperado.',
+         detalle: error
+      });
+   });
+
+});
+
+router.get('/perfil', async (req, res) => {
+   await Usuario.find({}).exec().then(val => {
+
+      if (!val) {
+         res.status(500).json({
+            mensaje: 'Ocurrió un error inesperado.',
+            detalle: 'La base de datos no devolvió el registro actualizado.'
+         });
+      } else {
+         res.json(val);
+      }
+
+   }).catch(error => {
+      res.status(500).json({
+         mensaje: 'Ocurrió un error inesperado.',
+         detalle: error
+      });
+   });
+
+});
+
+router.get('/', (req, res) => {
+      Usuario.find({}).exec().then(val => {
+
+      if (val.length == 0) {
+         res.status(400).json({
+            mensaje: 'No se encontraron registros que coincidan con los parametros de búsqueda.',
+            detalle: error
          });
       } else {
          res.json(val);

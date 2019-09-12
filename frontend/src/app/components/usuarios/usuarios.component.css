@@ -11,3 +11,8 @@
  
     margin:0%;
 }
+.existeUsuario{
+    color: red;
+    position: absolute;
+    left: 15%;
+}

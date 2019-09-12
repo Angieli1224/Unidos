@@ -19,7 +19,16 @@ export class UsuarioService {
    private usuario = new BehaviorSubject(null);
    $usuario = this.usuario.asObservable();
 
-   constructor(private http: HttpClient) {   }
+   private usuarioTodos = new BehaviorSubject(null);
+   $usuarioTodos = this.usuarioTodos.asObservable();
+
+   constructor(private http: HttpClient) { 
+      this.http.get(`${this.base}/usuario`).subscribe(valor => {
+         this.usuarioTodos.next(valor);
+      }, error => {
+         console.log(error);
+      });
+     }
 
    getUsuario() {
       return this.http.get(this.base);

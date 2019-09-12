@@ -56,12 +56,7 @@ export class AdmonComponent implements OnInit {
 
     this.usuariosService.cantpersonas().subscribe(res =>{
       this.cantidadUsuarios=res;
-      console.log("3. componente  res " +  res);
     });
-    console.log("3. componente  " + this.cantidadUsuarios);
-    
-    
-
   }
 
   

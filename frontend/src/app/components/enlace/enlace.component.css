@@ -25,5 +25,5 @@ input:valid, textarea:valid {
     background: white;
   }
   input:invalid, textarea:invalid {
-    background:red;
+    border:red;
   }

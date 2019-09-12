@@ -1,26 +1,30 @@
 <div class="container">
-   <div class="row ">
-      <div id="header" class="col m12">
+
+   <div class="row otro2 ">
+      <div class="col m12">
          <img class="responsive-img" src="../../../assets/header.jpg" alt="logo">
       </div>
    </div>
+
    <div class="row">
+
       <div class="col m4 center ingresar">
+
          <form [formGroup]="loginForm">
             <div class="col m2 down ">
-                  <i class="material-icons prefix icono">account_circle</i>
+               <i class="material-icons prefix icono">account_circle</i>
             </div>
-               
-            <div class="col m10 center">               
+
+            <div class="col m10 center">
                <input type="text" formControlName="identificacion" placeholder="Usuario">
             </div>
             <div class="col m2 left">
                <i class="material-icons prefix icono">vpn_key</i>
             </div>
             <div class="col 10 center">
-                  <input type="password" formControlName="contrasena" placeholder="Contraseña">
+               <input type="password" formControlName="contrasena" placeholder="Contraseña">
             </div>
-            
+
             <button class="btn" (click)="acceder()">Ingresar</button>
          </form>
       </div>
@@ -29,16 +33,19 @@
          <h4> Si aún no estas Registrado</h4>
          <h2>Se parte de Nosotros</h2>
 
-         <button class="btn waves-effect waves-light btn1" type="button" [routerLink]="['../enlace']">Registrarse<i class="material-icons right">send</i> </button>
+         <button class="btn waves-effect waves-light btn1" type="button" [routerLink]="['../enlace']">Registrarse<i
+               class="material-icons right">send</i> </button>
 
       </div>
 
-   </div>
+   
 
-   <div class="row">
-      <div id="pie" class="col m12">
-         <img class="responsive-img logos"  src="../../../assets/fc.png" alt="logo">
-         <img class="responsive-img logos"  src="../../../assets/insta.png" alt="logo">
+      <div class="row otro2">
+         <div id="pie" class="col m12">
+          <a href="https://www.facebook.com/julian.plazas.75" target="_blank" ><img  class="responsive-img logos" src="../../../assets/fc.png"  alt="logo"> </a>
+            <img class="responsive-img logos" src="../../../assets/insta.png" alt="logo">
+         </div>
       </div>
+
    </div>
 </div>
