@@ -26,5 +26,11 @@ export class SugerenciaService {
   postSugerencia(Sugerencia: any) {
     return this.http.post(`${this.base}/sugerencia`, Sugerencia);
  }
+
+ DeleteSugerencias(Sugerencia: any){
+  return this.http.put(`${this.base}/sugerencia/eliminar`,Sugerencia);
+  console.log("HOLAAA "+this.http.delete(`${this.base}/sugerencia`));
+  
+}
   
 }

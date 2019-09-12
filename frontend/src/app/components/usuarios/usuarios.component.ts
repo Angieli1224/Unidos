@@ -82,9 +82,20 @@ export class UsuariosComponent implements OnInit {
 
    addUsuario(form: NgForm) {
 
-      // if (this.usuarioForm.controls['nombre'].value == '') {
-      //    this.spanNombre = 'por favor digite su nombre';
-      // }
+      var ciudad = document.getElementById('ciudad') as HTMLInputElement;
+      this.usuarioForm.controls['id_enlace'].setValue(ciudad.value);
+      var comuna = document.getElementById('comuna') as HTMLInputElement;
+      this.usuarioForm.controls['id_enlace'].setValue(comuna.value);
+      var mesa_votacion = document.getElementById('mesa_votacion') as HTMLInputElement;
+      this.usuarioForm.controls['id_enlace'].setValue(mesa_votacion.value);
+      var nivel_escolaridad = document.getElementById('nivel_escolaridad') as HTMLInputElement;
+      this.usuarioForm.controls['id_enlace'].setValue(nivel_escolaridad.value);
+      var perfil_ocupacional = document.getElementById('perfil_ocupacional') as HTMLInputElement;
+      this.usuarioForm.controls['id_enlace'].setValue(perfil_ocupacional.value);
+      var trabaja = document.getElementById('trabaja') as HTMLInputElement;
+      this.usuarioForm.controls['id_enlace'].setValue(trabaja.value);
+      var personas_cargo = document.getElementById('personas_cargo') as HTMLInputElement;
+      this.usuarioForm.controls['id_enlace'].setValue(personas_cargo.value);
 
       this.usuarioService.postUsuario(this.usuarioForm.value)
          .subscribe(res => {

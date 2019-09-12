@@ -69,6 +69,7 @@ console.log("estes es el id usuario del servidor "+body['id_usuario']);
 
 });
 
+
 router.put('/actualizar', (req, res) => {
 
    Sugerencia.findByIdAndUpdate(req.body.id, { estado: req.body.estado }).exec().then(val => {
@@ -90,5 +91,28 @@ router.put('/actualizar', (req, res) => {
    });
 
 });
+
+router.put('/eliminar', async (req, res) => {
+
+    await Sugerencia.findByIdAndDelete(req.body._id).exec().then( val => {
+
+      if (!val) {
+         res.status(500).json({
+            mensaje: 'Ocurrió un error inesperado.',
+            detalle: 'La base de datos no devolvió el registro actualizado.'
+         });
+      } else {
+         res.json(val);
+      }
+
+      }).catch(error => {
+         res.status(500).json({
+            mensaje: 'Ocurrió un error inesperado.',
+            detalle: error
+         });
+      });
+
+});
+
 
 module.exports = router;

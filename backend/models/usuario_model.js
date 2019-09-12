@@ -9,10 +9,10 @@ let UsuarioSchema = new Schema({
    //datos
    nombre: { type: String, required: [true, 'Se requiere el nombre.'] },
    apellido: { type: String, required: [true, 'Se requiere el apellido.'] },
-   contrasena: { type: Number, required: [true, 'Se requiere la contraseña.'] },
+   contrasena: { type: String, required: [true, 'Se requiere la contraseña.'] },
    telefono: { type: Number, required: [true, 'Se requiere el teléfono.'] },
    direccion: { type: String, required: [true, 'Se requiere la dirección.'] },
-   ciudad: { type: Schema.Types.ObjectId, ref: 'Ciudad', required: [true, 'Se requiere la ciudad.'] },
+   ciudad: { type: String, required: [true, 'Se requiere la ciudad.'] },
    comuna: { type: Number, required: [true, 'Se requiere la comuna.'] },
    puesto_votacion: { type: String, required: [true, 'Se requiere el puesto de votación.'] },
    mesa_votacion: { type: Number, required: [true, 'Se requiere la mesa de votación.'] },

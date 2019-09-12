@@ -37,6 +37,7 @@
                <th>Enlance</th>
                <th>Asunto</th>
                <th>descripcion</th>
+               <th>Eliminar</th>
                              
             </tr>
          </thead>
@@ -47,7 +48,7 @@
                <td>{{ sugerencia.id_enlace }}</td>
                <td>{{ sugerencia.asunto }}</td>
                <td>{{ sugerencia.descripcion }}</td>
-               
+               <td>  <button type="button" class="btn right" (click)="eliminarSugerencias(sugerencia)">Eliminar</button> </td>
             </tr>
          </tbody>
 

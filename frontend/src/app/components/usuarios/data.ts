@@ -5,10 +5,22 @@ export const ciudad  = [
     },
     {
         codigo:2,
-        descripcion:'Bogota'
+        descripcion:'Dagua'
     },
     {
         codigo:3,
         descripcion:'Buenaventura'
+    },
+    {
+        codigo:4,
+        descripcion:'Yumbo'
+    },
+    {
+        codigo:5,
+        descripcion:'Rozo'
+    },
+    {
+        codigo:6,
+        descripcion:'Jamundi'
     }
 ]

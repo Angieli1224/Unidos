@@ -14,6 +14,7 @@ export class ConsulSugerenciaComponent implements OnInit {
   
   constructor(private active: ActivatedRoute, private sugerenciaService: SugerenciaService,private router: Router) { }
 
+
   ngOnInit() {
 
    this.obtenerSugerencias();
@@ -29,6 +30,13 @@ export class ConsulSugerenciaComponent implements OnInit {
       console.log( res);
       
    
+    }); 
+  };
+
+  eliminarSugerencias(sugerencia:Sugerencia){
+    this.sugerenciaService.DeleteSugerencias(sugerencia).subscribe(res =>{
+      this.obtenerSugerencias();  
+       
     }); 
   };
  
