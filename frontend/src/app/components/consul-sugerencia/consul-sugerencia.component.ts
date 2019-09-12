@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {SugerenciaService} from '../../services/sugerencia.service';
 import { Sugerencia } from 'src/app/models/sugerencia';
 
@@ -12,7 +12,7 @@ import { Sugerencia } from 'src/app/models/sugerencia';
 export class ConsulSugerenciaComponent implements OnInit {
 
   
-  constructor(private sugerenciaService: SugerenciaService,private router: Router) { }
+  constructor(private active: ActivatedRoute, private sugerenciaService: SugerenciaService,private router: Router) { }
 
   ngOnInit() {
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { EnlaceService } from 'src/app/services/enlace.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
    selector: 'app-enlace',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class EnlaceComponent {
    private enlaces: any[];
-   constructor(private sEnlace: EnlaceService,private router: Router) {
+   constructor(private active: ActivatedRoute, private sEnlace: EnlaceService,private router: Router) {
 
       sEnlace.$enlaces.subscribe(val => {
          if (val) {

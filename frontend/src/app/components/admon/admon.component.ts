@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router , ActivatedRoute} from '@angular/router';
 import {UsuarioService} from '../../services/usuario.service'
 
 declare var M: any;
@@ -14,12 +14,13 @@ declare var M: any;
 })
 export class AdmonComponent implements OnInit {
 
+
   cantidadUsuarios:any;
   private usuariosXenlace : any;
 
 
   
-  constructor( private usuariosService: UsuarioService ,private router: Router) { 
+  constructor(private active: ActivatedRoute, private usuariosService: UsuarioService ,private router: Router) { 
    this.usuariosXenlace = 0;
   }
 
@@ -63,4 +64,7 @@ export class AdmonComponent implements OnInit {
 
   }
 
+  
+
 }
+

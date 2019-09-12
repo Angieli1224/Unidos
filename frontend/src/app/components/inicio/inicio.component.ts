@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { from } from 'rxjs';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
@@ -14,18 +14,23 @@ export class InicioComponent {
 
    loginForm: FormGroup;
 
-   constructor(private sUsuario: UsuarioService, private router: Router) {
+   constructor(private active: ActivatedRoute, private sUsuario: UsuarioService, private router: Router) {
 
       this.loginForm = new FormGroup({
          identificacion: new FormControl(null, Validators.required),
          contrasena: new FormControl(null, Validators.required)
       });
 
-      sUsuario.$usuario.subscribe(val => {
+      
+
+   }
+
+   acceder() {
+      this.sUsuario.$usuario.subscribe(val => {
          if (val) {
             // para admin
             if (val['identificacion'] == '29584935') {
-               router.navigate(['../admon']); // cambiar rutas
+               this.router.navigate(['../admon']); // cambiar rutas
             } else {
                console.log(this.loginForm.get('identificacion').value);
                
@@ -33,13 +38,11 @@ export class InicioComponent {
             }
          }
       });
-
-   }
-
-   acceder() {
       this.sUsuario.acceso(this.loginForm.value);
       
       
    }
+
+  
 
 }

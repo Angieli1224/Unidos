@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
 import {UsuarioService} from '../../services/usuario.service';
 import {Usuario} from 'src/app/models/usuario';
 
@@ -12,7 +12,7 @@ import {Usuario} from 'src/app/models/usuario';
 })
 export class EducativoComponent implements OnInit {
 
-  constructor(private usuarioService: UsuarioService ,private router: Router) { }
+  constructor(private active: ActivatedRoute, private usuarioService: UsuarioService ,private router: Router) { }
 
   ngOnInit() {
     this.obtenerPerfil();
