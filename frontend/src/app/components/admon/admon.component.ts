@@ -16,12 +16,12 @@ export class AdmonComponent implements OnInit {
 
 
   cantidadUsuarios:any;
-  private usuariosXenlace : any;
+  usuariosXenlace : any;
 
 
   
   constructor(private active: ActivatedRoute, private usuariosService: UsuarioService ,private router: Router) { 
-   this.usuariosXenlace = 0;
+    this.usuariosXenlace = 0;
   }
 
   ngOnInit() {
@@ -31,7 +31,7 @@ export class AdmonComponent implements OnInit {
 
   mostrar() {
     
-    this.router.navigate(['../usuario', '29584935']);
+    this.router.navigate(['../usuario', '1130584672']);
   }
   mostrarSuge() {
     

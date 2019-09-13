@@ -34,8 +34,8 @@ export class UsuarioService {
       return this.http.get(this.base);
    }
 
-   getPerfil(){
-      return this.http.get(`${this.base}/usuario/perfil`);
+   getPerfil(consulta: any){
+      return this.http.post(`${this.base}/usuario/perfil`, consulta);
     }
 
    postUsuario(Usuario: any) {

@@ -6,6 +6,8 @@
 }
 .select{
     visibility: visible;
+    color: red;
+        
 }
 .otro2{
  
@@ -15,4 +17,17 @@
     color: red;
     position: absolute;
     left: 15%;
+}
+
+#color_letra{
+    color: red;
+    visibility: visible;  
+}
+
+.input-field select{
+    color: green;
+}
+
+::placeholder{
+    color: black;
 }

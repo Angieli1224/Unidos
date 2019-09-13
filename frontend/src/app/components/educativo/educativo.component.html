@@ -29,58 +29,111 @@
    <div class="row otro2">
       <h4 class="center">Pérfil Educativo y Ocupacional </h4>
       <div class="row otro2 center">
-         <nav>
-            <div class="nav-wrapper">
-               <form>
-                  <div class="input-field">
-                     <input id="search" type="search" placeholder="Ingrese el pérfl Ocupacional" required>
+
+         <form [formGroup]="consultaForm">
+            <div class="input-field col s4">
+               <span class="left">Seleccione el nivel de escolaridad</span>
+               <br>
+               <select id="nivel_escolaridad" formControlName="nivel_escolaridad">
+                  <!-- <option value="" disabled>Seleccione el nivel de escolaridad</option> -->
+                  <option value="ninguno">Ninguno</option>
+                  <option value="Tecnico">Técnico</option>
+                  <option value="Tecnologo">Tecnólogo</option>
+                  <option value="Profesional">Profesional</option>
+                  <option value="Bachiller">Bachiller</option>
+                  <option value="Primaria">Primaria</option>
+                  <option value="Ninguno">Ninguno</option>
+               </select>
+
+               <!-- <input id="search" type="search" placeholder="Ingrese el pérfl Ocupacional" required>
                      <label  class="label-icon" for="search"><i class="material-icons">search</i></label>
-                     <i class="material-icons">close</i>
-                  </div>
-               </form>
+                     <i class="material-icons">close</i> -->
             </div>
-         </nav>
-         
+
+            <div class="input-field col s4">
+
+               <span class="left">Seleccione el perfil ocupacional</span>
+               <br>
+               <select id="perfil_ocupacional" formControlName="perfil_ocupacional">
+                  <!-- <option value="" disabled>Seleccione el perfil ocupacional </option> -->
+                  <option value="ninguno">Ninguno</option>
+                  <option value="Sistemas">Sístemas</option>
+                  <option value="Electrico">Eléctrico</option>
+                  <option value="Electronico">Eléctronico</option>
+                  <option value="Licenciatura">Licenciatura</option>
+                  <option value="Diseñadorgrafico">Diseñador Gráfico</option>
+                  <option value="Industrial">Industrial</option>
+                  <option value="Contabilidad">Contabilidad</option>
+                  <option value="Administracion">Administración</option>
+                  <option value="Arquitectura">Arquitectura</option>
+                  <option value="Abogacia">Abogacia</option>
+                  <option value="Salud">Salud</option>
+                  <option value="Civil">Civil</option>
+                  <option value="Comunicacionsocial">Comunicación Social</option>
+                  <option value="Deporte">Deporte</option>
+                  <option value="Economia">Economía</option>
+                  <option value="Hosteleria">Hostelería</option>
+                  <option value="Idiomas">Idiomas</option>
+                  <option value="Humanidades">Humanidades</option>
+                  <option value="Mecanica">Mecánica</option>
+                  <option value="Telecomunicaciones">Telecomunicaciones</option>
+                  <option value="Mensajero">Mensajero</option>
+                  <option value="OficiosVarios">Oficios Varios</option>
+                  <option value="Amadecasa">Ama de casa</option>
+                  <option value="Estudiante">Estudiante</option>
+               </select>
+
+
+            </div>
+            
+               <div class="input-field col s4 ">
+                  
+                  <button (click)="obtenerPerfil()" class="btn left"><i
+                        class="material-icons left">search</i>Consultar</button>
+           
+
       </div>
-      <table class="responsive-table highlight">
-         <thead>
-            <tr>
-               <th>Cédula</th>
-               <th>Nombre</th>
-               <th>Apellido</th>
-               <th>Telefono</th>
-               <th>Pérfil Educativo</th>
-               <th>Pérfil Ocupacional</th>
-               <th>Personas a Cargo</th>
+      </form>
+   </div>
+   <table class="responsive-table highlight">
+      <thead>
+         <tr>
+            <th>Cédula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+            <th>Pérfil Educativo</th>
+            <th>Pérfil Ocupacional</th>
+            <th>Personas a Cargo</th>
 
-            </tr>
-         </thead>
+         </tr>
+      </thead>
 
-         <tbody>
-            <tr *ngFor="let usuario of usuarioService.usuarios">
-               <td>{{ usuario.identificacion }}</td>
-               <td>{{ usuario.nombre }}</td>
-               <td>{{ usuario.apellido }}</td>
-               <td>{{ usuario.telefono }}</td>
-               <td>{{ usuario.nivel_escolaridad }}</td>
-               <td>{{ usuario.perfil_ocupacional }}</td>
-               <td>{{ usuario.personas_cargo }}</td>
-                
-            </tr>
-         </tbody>
-      </table>
+      <tbody>
+         <tr *ngFor="let usuario of usuarioService.usuarios">
+            <td>{{ usuario.identificacion }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.apellido }}</td>
+            <td>{{ usuario.telefono }}</td>
+            <td>{{ usuario.nivel_escolaridad }}</td>
+            <td>{{ usuario.perfil_ocupacional }}</td>
+            <td>{{ usuario.personas_cargo }}</td>
+
+         </tr>
+      </tbody>
+   </table>
 
 
-      <div class="row">
-         <div id="pie" class="col m12">
-            <img class="responsive-img logos" src="../../../assets/fc.png" alt="logo">
-            <img class="responsive-img logos" src="../../../assets/insta.png" alt="logo">
-         </div>
+   <div class="row">
+      <div id="pie" class="col m12">
+         <img class="responsive-img logos" src="../../../assets/fc.png" alt="logo">
+         <img class="responsive-img logos" src="../../../assets/insta.png" alt="logo">
       </div>
    </div>
+</div>
 
-   <script>
-      $(document).ready(function () {
-         $('.sidenav').sidenav();
-      });
-   </script>
+<script>
+   $(document).ready(function () {
+      $('.sidenav').sidenav();
+   });
+</script>

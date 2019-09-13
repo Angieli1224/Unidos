@@ -8,15 +8,15 @@
         <nav>
             <div class="nav-wrapper ">
 
-                <ul class="left hide-on-med-and-down ">
-                    <li><a class="menu" [routerLink]="['../../../inicio']"><i
+                <ul class="right hide-on-med-and-down ">
+                    <!-- <li><a class="menu" [routerLink]="['../../../inicio']"><i
                                 class="material-icons left">home</i>Inicio</a></li>
                     <li><a class="menu" [routerLink]="['../usuario']"><i class="material-icons left">edit</i>Editar
                             Registro</a>
-                    </li>
-                    <li><a class="menu" [routerLink]="['../sugerencias/crear']"><i
+                    </li> -->
+                    <!-- <li><a class="menu" [routerLink]="['../sugerencias/crear']"><i
                                 class="material-icons left">add</i>Registrar Sugerencias</a>
-                    </li>
+                    </li> -->
                     <li><a class="menu" [routerLink]="['']"><i class="material-icons left">close</i>Cerrar Sesión</a>
                     </li>
                 </ul>
@@ -30,12 +30,12 @@
                 <form [formGroup]="sugerenciaForm" class="col s12">
                     <div class="row">
                         <div class="input-field col s6">
-                            <i class="material-icons prefix">note_add</i>
+                            <i class="material-icons prefix">comment</i>
                             <input id="input_text" class="suge" type="text" formControlName="asunto" data-length="10">
                             <label for="input_text">Asunto:</label>
                         </div>
                     </div>
-                    <div class="row otro2">
+                    <div class="row ">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">note_add</i>
                             <textarea id="textarea2" class="materialize-textarea suge" formControlName="descripcion"
@@ -47,9 +47,9 @@
             </div>
             <br>
             <button (click)="addSugerencia()" class="btn waves-effect waves-light btn1 right" type="button"
-                (click)="resetForm(sugerenciaForm)">Enviar<i class="material-icons right"></i></button>
+                (click)="resetForm(sugerenciaForm)">Enviar<i class="material-icons right">markunread_mailbox</i></button>
             <button class="btn waves-effect waves-light btn1 left" type="button"
-                [routerLink]="['../../inicio']">Inicio<i class="material-icons right"></i></button>
+                [routerLink]="['../../../inicio']">Inicio<i class="material-icons right"></i></button>
 
         </div>
         <div class="row otro2">

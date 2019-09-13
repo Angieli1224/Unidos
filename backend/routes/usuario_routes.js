@@ -5,7 +5,7 @@ const Usuario = require('../models/usuario_model');
 
 router.get('/enlaces', (req, res) => {
    //con el código 2020 estamos definiendo que el usuario es un enlace
-   Usuario.find({ id_enlace: 2020 }).exec().then(val => {
+   Usuario.find({ id_enlace: 1130584672 }).exec().then(val => {
 
       if (val.length == 0) {
          res.status(400).json({
@@ -293,24 +293,90 @@ router.post('/cantidad/enlace', async (req, res) => {
 
 });
 
-router.get('/perfil', async (req, res) => {
-   await Usuario.find({}).exec().then(val => {
+router.post('/perfil', async (req, res) => {
+   let consulta = req.body;
 
-      if (!val) {
+   if(consulta['nivel_escolaridad'] == 'ninguno' && consulta['perfil_ocupacional']!= 'ninguno'){
+      await Usuario.find({perfil_ocupacional: consulta['perfil_ocupacional'] }).exec().then(val => {
+
+         if (!val) {
+            res.status(500).json({
+               mensaje: 'Ocurrió un error inesperado.',
+               detalle: 'La base de datos no devolvió el registro actualizado.'
+            });
+         } else {
+            res.json(val);
+         }
+   
+      }).catch(error => {
          res.status(500).json({
             mensaje: 'Ocurrió un error inesperado.',
-            detalle: 'La base de datos no devolvió el registro actualizado.'
+            detalle: error
          });
-      } else {
-         res.json(val);
-      }
-
-   }).catch(error => {
-      res.status(500).json({
-         mensaje: 'Ocurrió un error inesperado.',
-         detalle: error
       });
-   });
+   }
+
+   if(consulta['nivel_escolaridad'] != 'ninguno' && consulta['perfil_ocupacional'] == 'ninguno'){
+
+      await Usuario.find({nivel_escolaridad : consulta['nivel_escolaridad']}).exec().then(val => {
+
+         if (!val) {
+            res.status(500).json({
+               mensaje: 'Ocurrió un error inesperado.',
+               detalle: 'La base de datos no devolvió el registro actualizado.'
+            });
+         } else {
+            res.json(val);
+         }
+   
+      }).catch(error => {
+         res.status(500).json({
+            mensaje: 'Ocurrió un error inesperado.',
+            detalle: error
+         });
+      });
+   }
+   if(consulta['nivel_escolaridad'] != 'ninguno' && consulta['perfil_ocupacional'] != 'ninguno'){
+
+      await Usuario.find({nivel_escolaridad: consulta['nivel_escolaridad'] , perfil_ocupacional : consulta['perfil_ocupacional']}).exec().then(val => {
+
+         if (!val) {
+            res.status(500).json({
+               mensaje: 'Ocurrió un error inesperado.',
+               detalle: 'La base de datos no devolvió el registro actualizado.'
+            });
+         } else {
+            res.json(val);
+         }
+   
+      }).catch(error => {
+         res.status(500).json({
+            mensaje: 'Ocurrió un error inesperado.',
+            detalle: error
+         });
+      });
+   }
+   if(consulta['nivel_escolaridad'] == 'ninguno' && consulta['perfil_ocupacional'] == 'ninguno'){
+
+      await Usuario.find({perfil_ocupacional : consulta['perfil_ocupacional']}).exec().then(val => {
+
+         if (!val) {
+            res.status(500).json({
+               mensaje: 'Ocurrió un error inesperado.',
+               detalle: 'La base de datos no devolvió el registro actualizado.'
+            });
+         } else {
+            res.json(val);
+         }
+   
+      }).catch(error => {
+         res.status(500).json({
+            mensaje: 'Ocurrió un error inesperado.',
+            detalle: error
+         });
+      });
+   }
+  
 
 });
 

@@ -3,6 +3,7 @@ import { UsuarioService } from '../../services/usuario.service';
 import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ciudad } from './data';
+import { Logs } from 'selenium-webdriver';
 
 declare var M: any;
 
@@ -51,7 +52,7 @@ export class UsuariosComponent implements OnInit {
       });
 
       this.usuarioForm.controls['identificacion'].valueChanges.subscribe(val => {
-
+         this.existeUsuario = false;
          let existe = this.usuarios.filter((v) => v.identificacion === val);
          console.log(existe);
 
@@ -59,13 +60,12 @@ export class UsuariosComponent implements OnInit {
             console.log('funciona XD');
             this.existeUsuario = true;
             M.toast({ html: 'El usario ya existe' });
+           
          }
 
       });
 
-      this.active.params.subscribe(val => {
-         this.usuarioForm.controls['id_enlace'].setValue(val.id_enlace);
-      })
+   
 
 
       usuarioService.$usuarioTodos.subscribe(val => {
@@ -78,24 +78,29 @@ export class UsuariosComponent implements OnInit {
    ngOnInit() {
       var elems = document.querySelectorAll('select');
       var instances = M.FormSelect.init(elems, {});
+      this.active.params.subscribe(val => {
+         this.usuarioForm.controls['id_enlace'].setValue(val.id_enlace);
+         console.log(val.id_enlace);
+         
+      })
    }
 
    addUsuario(form: NgForm) {
 
       var ciudad = document.getElementById('ciudad') as HTMLInputElement;
-      this.usuarioForm.controls['id_enlace'].setValue(ciudad.value);
+      this.usuarioForm.controls['ciudad'].setValue(ciudad.value);
       var comuna = document.getElementById('comuna') as HTMLInputElement;
-      this.usuarioForm.controls['id_enlace'].setValue(comuna.value);
+      this.usuarioForm.controls['comuna'].setValue(comuna.value);
       var mesa_votacion = document.getElementById('mesa_votacion') as HTMLInputElement;
-      this.usuarioForm.controls['id_enlace'].setValue(mesa_votacion.value);
+      this.usuarioForm.controls['mesa_votacion'].setValue(mesa_votacion.value);
       var nivel_escolaridad = document.getElementById('nivel_escolaridad') as HTMLInputElement;
-      this.usuarioForm.controls['id_enlace'].setValue(nivel_escolaridad.value);
+      this.usuarioForm.controls['nivel_escolaridad'].setValue(nivel_escolaridad.value);
       var perfil_ocupacional = document.getElementById('perfil_ocupacional') as HTMLInputElement;
-      this.usuarioForm.controls['id_enlace'].setValue(perfil_ocupacional.value);
+      this.usuarioForm.controls['perfil_ocupacional'].setValue(perfil_ocupacional.value);
       var trabaja = document.getElementById('trabaja') as HTMLInputElement;
-      this.usuarioForm.controls['id_enlace'].setValue(trabaja.value);
+      this.usuarioForm.controls['trabaja'].setValue(trabaja.value);
       var personas_cargo = document.getElementById('personas_cargo') as HTMLInputElement;
-      this.usuarioForm.controls['id_enlace'].setValue(personas_cargo.value);
+      this.usuarioForm.controls['personas_cargo'].setValue(personas_cargo.value);
 
       this.usuarioService.postUsuario(this.usuarioForm.value)
          .subscribe(res => {
@@ -103,7 +108,7 @@ export class UsuariosComponent implements OnInit {
             M.toast({ html: 'Guardado con Éxito' });
 
          });
-      if (this.usuarioForm.get('id_enlace').value == '29584935') {
+      if (this.usuarioForm.get('id_enlace').value == '1130584672') {
          this.router.navigate(['../admon']);
 
       };

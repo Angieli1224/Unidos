@@ -28,11 +28,11 @@
                      <span class="existeUsuario" *ngIf="spanNombre.length > 0">{{spanNombre}}</span>
                   </div>
                   <div class="input-field col s6">
-                     <i class="material-icons prefix">account_circle</i>
+                     <i class="material-icons prefix">account_box</i>
                      <input type="text" formControlName="apellido" placeholder="Ingrese su apellido">
                   </div>
                   <div class="input-field col s6">
-                     <i class="material-icons prefix">account_circle</i>
+                     <i class="material-icons prefix">perm_contact_calendar</i>
                      <input type="number" [ngClass]="{'after': existeUsuario}" formControlName="identificacion"
                         placeholder="Ingrese su identificación">
                      <br>
@@ -48,57 +48,57 @@
                   </div>
                   <div class="input-field col s6">
                      <i class="material-icons prefix">home</i>
-                     <input type="text" name="direccion" formControlName="direccion" placeholder="Ingrese su dirección">
+                     <input  type="text" name="direccion" formControlName="direccion" placeholder="Ingrese su dirección">
                   </div>
-                  <div class="input-field  col s6">
-                     <i class="material-icons prefix">person_pin_circle</i>
-                     <select id="ciudad"  formControlName="ciudad">
-                        <option value="" disabled>Seleccione su ciudad</option>
+                  <div class="input-field  col s6 ">
+                     <i class="material-icons prefix" >place</i>
+                     <select id="ciudad" formControlName="ciudad">
+                        <option value="" disabled selected>Seleccione su ciudad</option>
                         <option value="Cali">Cali</option>
-                        <option value="Buenaventura">Buenaventura</option>
+                        <option value="Buenaventura">Buenaventura</option>s
                         <option value="Dagua">Dagua</option>
                         <option value="Jamundi">Jamundi</option>
-                        <option value="Rozo">Rozo</option>
+                        <option value="Rozo">Rozo</option> 
                         <option value="Yumbo">Yumbo</option>
                      </select>
                      <!-- <label>Ciudad</label> -->
                   </div>
 
                   <div class="input-field col s6">
-                     <i class="material-icons prefix">person_pin_circle</i>
+                     <i class="material-icons prefix">pin_drop</i>
                      <!-- <input type="number" name="comuna" formControlName="comuna" placeholder="Ingrese su comuna"> -->
-                     <select  id="comuna"  formControlName="comuna">
-                           <option value="" disabled>Seleccione su comuna</option>
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
-                           <option value="10">10</option>
-                           <option value="11">11</option>
-                           <option value="12">12</option>
-                           <option value="13">13</option>
-                           <option value="14">14</option>
-                           <option value="15">15</option>
-                           <option value="16">16</option>
-                           <option value="17">17</option>
-                           <option value="18">18</option>
-                           <option value="19">19</option>
-                           <option value="20">20</option>
-                           <option value="21">21</option>
-                           <option value="22">22</option>
-                           <option value="23">23</option>
-                           <option value="24">24</option>
-                           <option value="25">25</option>
-                           <option value="26">26</option>
-                           <option value="27">27</option>
-                           <option value="28">28</option>
-                           <option value="29">29</option>
-                           <option value="30">30</option>   
+                     <select id="comuna" formControlName="comuna">
+                        <option value="" disabled>Seleccione su comuna</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
 
                      </select>
                   </div>
@@ -108,11 +108,11 @@
                         placeholder="Ingrese su puesto votación">
                   </div>
                   <div class="input-field col s6">
-                     <i class="material-icons prefix">account_circle</i>
+                     <i class="material-icons prefix">vertical_align_bottom</i>
                      <!-- <input type="number" name="mesa_votacion" formControlName="mesa_votacion"
                         placeholder="Ingrese su mesa votación"> -->
                      <select id="mesa_votacion" formControlName="mesa_votacion">
-                        <option value="" disabled>Seleccione  su mesa votación</option>
+                        <option value="" disabled>Seleccione su mesa votación</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -189,13 +189,13 @@
                      <i class="material-icons prefix">work</i>
                      <!-- <input type="text" name="perfil_ocupacional" formControlName="perfil_ocupacional" -->
                      <!-- placeholder="Ingrese su perfil ocupacional"> -->
-                     <select id="perfil_ocupacional" formControlName="perfil_ocupacional" >
+                     <select id="perfil_ocupacional" formControlName="perfil_ocupacional">
                         <option value="" disabled>Seleccione el perfil ocupacional </option>
-                         <option value="Sistemas">Sístemas</option>
+                        <option value="Sistemas">Sístemas</option>
                         <option value="Electrico">Eléctrico</option>
                         <option value="Electronico">Eléctronico</option>
                         <option value="Licenciatura">Licenciatura</option>
-                        <option value="Diseñadorgrafico">Diseñadorgrafico</option>
+                        <option value="Diseñadorgrafico">Diseñador Gráfico</option>
                         <option value="Industrial">Industrial</option>
                         <option value="Contabilidad">Contabilidad</option>
                         <option value="Administracion">Administración</option>
@@ -203,7 +203,7 @@
                         <option value="Abogacia">Abogacia</option>
                         <option value="Salud">Salud</option>
                         <option value="Civil">Civil</option>
-                        <option value="Comunicacionsocial">Comunicacion Social</option>
+                        <option value="Comunicacionsocial">Comunicación Social</option>
                         <option value="Deporte">Deporte</option>
                         <option value="Economia">Economía</option>
                         <option value="Hosteleria">Hostelería</option>
@@ -212,8 +212,8 @@
                         <option value="Mecanica">Mecánica</option>
                         <option value="Telecomunicaciones">Telecomunicaciones</option>
                         <option value="Mensajero">Mensajero</option>
-                        <option value="OficiosVarios">OficiosVarios</option>
-                        <option value="Amadecasa">Amadecasa</option>
+                        <option value="OficiosVarios">Oficios Varios</option>
+                        <option value="Amadecasa">Ama de casa</option>
                         <option value="Estudiante">Estudiante</option>
                      </select>
                      <!-- <label>Ingrese nivel de escolaridad</label> -->
@@ -221,10 +221,10 @@
 
                   </div>
                   <div class="input-field col s6">
-                     <i class="material-icons prefix">work</i>
+                     <i class="material-icons prefix">next_week</i>
                      <!-- <input type="text" name="trabaja" formControlName="trabaja"
                         placeholder="¿labora actualmente? SI o NO"> -->
-                     <select id="trabaja"  formControlName="trabaja">
+                     <select id="trabaja" formControlName="trabaja">
                         <option value="" disabled>¿labora actualmente?</option>
                         <option value="SI">SI</option>
                         <option value="NO">NO</option>
@@ -266,7 +266,7 @@
                         <button (click)="addUsuario()" class="btn right"
                            (click)="resetForm(usuarioForm)">Enviar</button>
 
-                          
+
 
                         <button class="btn waves-effect waves-light btn1" type="button"
                            [routerLink]="['../../inicio']">Inicio<i class="material-icons right"></i></button>

@@ -4,7 +4,7 @@ export class Usuario {
         _id='',
         nombre='',
         apellido='',
-        ident=0,
+        identificacion=0,
         contrasena=0,
         id_enlace=0,
         telefono=0, 
@@ -21,7 +21,7 @@ export class Usuario {
         this._id=_id;
         this.nombre=nombre;
         this.apellido=apellido;
-        this.ident=ident;
+        this.identificacion=identificacion;
         this.contrasena=contrasena;
         this.id_enlace=id_enlace;
         this.telefono=telefono;
@@ -38,7 +38,7 @@ export class Usuario {
     _id: String;
     nombre:  String;
     apellido: String;
-    ident: Number;
+    identificacion: Number;
     contrasena: Number;
     id_enlace: Number;
     telefono: Number;
