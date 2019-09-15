@@ -22,6 +22,12 @@ export class ConsulSugerenciaComponent implements OnInit {
   }
 
   
+  mostrar() {
+    
+    this.router.navigate(['../usuario', '1130584672']);
+  }
+
+  
   obtenerSugerencias(){
     this.sugerenciaService.getSugerencias().subscribe(res =>{
     

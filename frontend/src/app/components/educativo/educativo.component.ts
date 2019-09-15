@@ -38,7 +38,7 @@ export class EducativoComponent implements OnInit {
 
   mostrar() {
     
-    this.router.navigate(['../usuario', '29584935']);
+    this.router.navigate(['../usuario', '1130584672']);
   }
   mostrarSuge() {
     
@@ -48,13 +48,9 @@ export class EducativoComponent implements OnInit {
   obtenerPerfil(){
     
 
-    this.usuarioService.getPerfil(this.consultaForm.value).subscribe(res =>{
-    
-    
+    this.usuarioService.getPerfil(this.consultaForm.value).subscribe(res =>{    
       this.usuarioService.usuarios= res as Usuario[];
-      console.log( res);
-      
-   
+
     }); 
   };
 

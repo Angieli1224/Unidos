@@ -19,6 +19,8 @@ export class UsuariosComponent implements OnInit {
    private usuarios: any[];
    usuarioForm: FormGroup;
 
+   id:any;
+
    ciudades = ciudad;
 
    existeUsuario: boolean;
@@ -80,7 +82,7 @@ export class UsuariosComponent implements OnInit {
       var instances = M.FormSelect.init(elems, {});
       this.active.params.subscribe(val => {
          this.usuarioForm.controls['id_enlace'].setValue(val.id_enlace);
-         console.log(val.id_enlace);
+         this.id = val.id_enlace;
          
       })
    }
@@ -120,6 +122,16 @@ export class UsuariosComponent implements OnInit {
          form.reset();
       }
    }
+
+   inicio(){
+      if(this.id==1130584672){
+      this.router.navigate(['../admon']);
+      }else{
+         this.router.navigate(['../../inicio']);
+      }
+   }
+
+
 
 
 

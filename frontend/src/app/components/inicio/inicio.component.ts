@@ -29,7 +29,7 @@ export class InicioComponent {
       this.sUsuario.$usuario.subscribe(val => {
          if (val) {
             // para admin
-            if (val['identificacion'] == '1130584672') {
+            if (val['identificacion'] == '1130584672' && val['contrasena'] == 'edilcali') {
                this.router.navigate(['../admon']); // cambiar rutas
             } else {
                console.log(this.loginForm.get('identificacion').value);
