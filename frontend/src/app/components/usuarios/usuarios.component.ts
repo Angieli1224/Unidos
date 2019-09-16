@@ -78,13 +78,18 @@ export class UsuariosComponent implements OnInit {
    }
 
    ngOnInit() {
-      var elems = document.querySelectorAll('select');
-      var instances = M.FormSelect.init(elems, {});
+      this.inicioselect();
+
       this.active.params.subscribe(val => {
          this.usuarioForm.controls['id_enlace'].setValue(val.id_enlace);
          this.id = val.id_enlace;
          
       })
+   }
+
+   inicioselect(){
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, {});
    }
 
    addUsuario(form: NgForm) {
@@ -107,6 +112,7 @@ export class UsuariosComponent implements OnInit {
       this.usuarioService.postUsuario(this.usuarioForm.value)
          .subscribe(res => {
             this.resetForm(form);
+            this.inicioselect();
             M.toast({ html: 'Guardado con Éxito' });
 
          });

@@ -26,6 +26,7 @@ export class InicioComponent {
    }
 
    acceder() {
+      this.sUsuario.acceso(this.loginForm.value);
       this.sUsuario.$usuario.subscribe(val => {
          if (val) {
             // para admin
@@ -38,7 +39,7 @@ export class InicioComponent {
             }
          }
       });
-      this.sUsuario.acceso(this.loginForm.value);
+      
       
       
    }
