@@ -77,9 +77,9 @@ a{
     font-size: 10pt ;   
 }
 
-input:valid, textarea:valid {
-    background: green ;
+input:valid {
+    background: white ;
   }
-  input:invalid, textarea:invalid {
+  input:invalid {
     background:red;
   }

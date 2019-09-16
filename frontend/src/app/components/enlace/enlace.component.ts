@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { EnlaceService } from 'src/app/services/enlace.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
+declare var M : any;
+
 @Component({
    selector: 'app-enlace',
    templateUrl: './enlace.component.html',
@@ -25,6 +27,9 @@ export class EnlaceComponent {
 
       if (enlace.length > 0) {
          this.router.navigate(['../usuario',enlace[0]['identificacion']]);
+      }else{
+         M.toast({ html: 'El Enlace no exite o verifique si está bien digitado' });
       }
+
    }
 }

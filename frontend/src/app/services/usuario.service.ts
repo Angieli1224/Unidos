@@ -16,7 +16,7 @@ export class UsuarioService {
    private cantidad =new BehaviorSubject(null);
    $cantidad = this.cantidad.asObservable();
 
-   private usuario = new BehaviorSubject(null);
+   usuario = new BehaviorSubject(null);
    $usuario = this.usuario.asObservable();
 
    private usuarioTodos = new BehaviorSubject(null);
@@ -44,11 +44,14 @@ export class UsuarioService {
 
    acceso(Usuario: any) {
       
-      return this.http.post(`${this.base}/usuario/acceso`, Usuario).subscribe(val => {
+     this.http.post(`${this.base}/usuario/acceso`, Usuario).subscribe(val => {
          this.usuario.next(val);
-   
+         console.log("retuns val "+val);
+         
+         
       });
    }
+  
 
 
    cantpersonas(){

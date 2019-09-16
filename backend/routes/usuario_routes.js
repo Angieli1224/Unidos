@@ -159,7 +159,7 @@ router.put('/actualizar', (req, res) => {
 
 });
 
-router.post('/acceso', (req, res) => {
+router.post('/acceso', async(req, res) => {
 
    let body = req.body;
 
@@ -173,9 +173,7 @@ router.post('/acceso', (req, res) => {
       });
 
 
-   }
-
-   if(body['identificacion'] == "1130584672"){
+   }else if(body['identificacion'] == "1130584672"){
 
       if(body['contrasena'] == "edilcali"){
 
@@ -192,32 +190,38 @@ router.post('/acceso', (req, res) => {
       }
 
 
+   } else {
+     await Usuario.findOne({ identificacion: body['identificacion'] }).exec().then(usuario => {
+
+         if (!usuario) {
+            res.status(400).json({
+               mensaje: 'El usuario no está registrado.'
+            });
+         } else if (!usuario['contrasena']) {
+            res.status(400).json({
+               mensaje: 'El usuario no tiene contraseña.'
+            });
+         } else if (usuario['contrasena'] != body['contrasena']) {
+            res.status(400).json({
+               mensaje: 'La contraseña no coincide.'
+            });
+         } else if(usuario['id_enlace'] =='1130584672'){
+            res.status(400).json({
+               mensaje: 'No tiene permiso los usuarios Enlaces.'
+            });
+         }else{
+            res.json(usuario);
+         }
+   
+      }).catch(error => {
+         res.status(500).json({
+            mensaje: 'Ocurrió un error inesperado.',
+            detalle: error
+         });
+      });
    }
 
-   Usuario.findOne({ identificacion: body['identificacion'] }).exec().then(usuario => {
-
-      if (!usuario) {
-         res.status(400).json({
-            mensaje: 'El usuario no está registrado.'
-         });
-      } else if (!usuario['contrasena']) {
-         res.status(400).json({
-            mensaje: 'El usuario no tiene contraseña.'
-         });
-      } else if (usuario['contrasena'] != body['contrasena']) {
-         res.status(400).json({
-            mensaje: 'La contraseña no coincide.'
-         });
-      } else {
-         res.json(usuario);
-      }
-
-   }).catch(error => {
-      res.status(500).json({
-         mensaje: 'Ocurrió un error inesperado.',
-         detalle: error
-      });
-   });
+   
 
 });
 
