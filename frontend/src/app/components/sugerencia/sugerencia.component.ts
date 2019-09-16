@@ -20,7 +20,9 @@ export class SugerenciaComponent {
   constructor(private sugerenciaService: SugerenciaService,private active: ActivatedRoute, private router:Router) {
 
     this.sugerenciaForm = new FormGroup({
+       nombre: new FormControl(null, Validators.required),
        id_usuario: new FormControl(null, Validators.required),
+       telefono: new FormControl(null, Validators.required),
        id_enlace: new FormControl(null),
        asunto: new FormControl(null, Validators.required),
        descripcion: new FormControl(null, Validators.required)

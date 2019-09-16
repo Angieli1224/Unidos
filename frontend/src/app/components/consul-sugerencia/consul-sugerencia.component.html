@@ -17,7 +17,7 @@
                <li><a class="menu" [routerLink]="['../../admon/educativo']"><i
                         class="material-icons left">search</i>Perfíl
                      Educativo y Ocupacional</a></li>
-               <li><a class="menu" [routerLink]="['../../admon/sugerencias']"><i
+               <li class="active"><a class="menu" [routerLink]="['../../admon/sugerencias']"><i
                         class="material-icons left">search</i>Sugerencias</a>
                </li>
                <li><a class="menu" [routerLink]="['../inicio']"><i class="material-icons left">close</i>Cerrar
@@ -33,7 +33,10 @@
       <table class="responsive-table highlight">
          <thead>
             <tr>
-               <th>Usuario</th>
+               
+               <th>Nombre</th>
+               <th>Cédula</th>
+               <th>Teléfono</th>
                <th>Enlance</th>
                <th>Asunto</th>
                <th>descripcion</th>
@@ -44,7 +47,9 @@
 
          <tbody>
             <tr *ngFor="let sugerencia of sugerenciaService.sugerencias">
+               <td>{{ sugerencia.nombre }}</td>
                <td>{{ sugerencia.id_usuario }}</td>
+               <td>{{ sugerencia.telefono }}</td>
                <td>{{ sugerencia.id_enlace }}</td>
                <td>{{ sugerencia.asunto }}</td>
                <td>{{ sugerencia.descripcion }}</td>
