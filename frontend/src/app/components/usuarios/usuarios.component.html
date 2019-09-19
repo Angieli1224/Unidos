@@ -48,17 +48,17 @@
                   </div>
                   <div class="input-field col s6">
                      <i class="material-icons prefix">home</i>
-                     <input  type="text" name="direccion" formControlName="direccion" placeholder="Ingrese su dirección">
+                     <input type="text" name="direccion" formControlName="direccion" placeholder="Ingrese su dirección">
                   </div>
                   <div class="input-field  col s6 ">
-                     <i class="material-icons prefix" >place</i>
+                     <i class="material-icons prefix">place</i>
                      <select id="ciudad" formControlName="ciudad">
                         <option value="" disabled selected>Seleccione su ciudad</option>
                         <option value="Cali">Cali</option>
                         <option value="Buenaventura">Buenaventura</option>s
                         <option value="Dagua">Dagua</option>
                         <option value="Jamundi">Jamundi</option>
-                        <option value="Rozo">Rozo</option> 
+                        <option value="Rozo">Rozo</option>
                         <option value="Yumbo">Yumbo</option>
                      </select>
                      <!-- <label>Ciudad</label> -->
@@ -263,13 +263,27 @@
                   </div>
                   <div class="card-action">
                      <div class="input-field col s12">
-                        <button (click)="addUsuario()" class="btn right"
-                           (click)="resetForm(usuarioForm)">Enviar</button>
+                        <!-- <button (click)="addUsuario()" class="btn right"
+                           (click)="resetForm(usuarioForm)">Enviar</button> -->
+                           <button data-target="modal1" class="btn modal-trigger right" >Enviar</button>
 
 
+                        <button class="btn waves-effect waves-light btn1" type="button" (click)="inicio()">Inicio<i
+                              class="material-icons right"></i></button>
 
-                        <button class="btn waves-effect waves-light btn1" type="button"
-                           (click)="inicio()">Inicio<i class="material-icons right"></i></button>
+                        
+
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal">
+                           <div class="modal-content">
+                              <h4>¿Deseas Guardar y Salir?</h4>
+                              <p>Aceptar para guardar y salir del registro. <br>Cancelar para guardar el registro y registrar otro usuario.</p>
+                           </div>
+                           <div class="modal-footer">
+                              <a (click)="addUsuario()"  class="modal-close waves-effect waves-green btn-flat" (click)="inicio()">Aceptar</a>
+                              <a  (click)="addUsuario()" class="modal-close waves-effect waves-green btn-flat" (click)="resetForm(usuarioForm)">Cancelar</a>
+                           </div>
+                        </div>
                      </div>
                   </div>
 

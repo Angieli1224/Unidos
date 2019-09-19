@@ -19,7 +19,7 @@ export class UsuariosComponent implements OnInit {
    private usuarios: any[];
    usuarioForm: FormGroup;
 
-   id:any;
+   id: any;
 
    ciudades = ciudad;
 
@@ -62,12 +62,12 @@ export class UsuariosComponent implements OnInit {
             console.log('funciona XD');
             this.existeUsuario = true;
             M.toast({ html: 'El usario ya existe' });
-           
+
          }
 
       });
 
-   
+
 
 
       usuarioService.$usuarioTodos.subscribe(val => {
@@ -75,24 +75,48 @@ export class UsuariosComponent implements OnInit {
             this.usuarios = val;
          }
       });
+
+
+
+
    }
 
    ngOnInit() {
+
+
+      this.iniciomodal();
+
+
       this.inicioselect();
+
+
 
       this.active.params.subscribe(val => {
          this.usuarioForm.controls['id_enlace'].setValue(val.id_enlace);
          this.id = val.id_enlace;
-         
+
       })
    }
 
-   inicioselect(){
+   iniciomodal() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, {});
+
+   }
+
+   modal() {
+      var elem = document.querySelectorAll('.modal');
+      var instance = M.Modal.getInstance(elem);
+      instance.open();
+   }
+
+
+   inicioselect() {
       var elems = document.querySelectorAll('select');
       var instances = M.FormSelect.init(elems, {});
    }
 
-   addUsuario(form: NgForm) {
+   addUsuario(form?: NgForm) {
 
       var ciudad = document.getElementById('ciudad') as HTMLInputElement;
       this.usuarioForm.controls['ciudad'].setValue(ciudad.value);
@@ -110,7 +134,7 @@ export class UsuariosComponent implements OnInit {
       this.usuarioForm.controls['personas_cargo'].setValue(personas_cargo.value);
 
       this.usuarioService.postUsuario(this.usuarioForm.value)
-         .subscribe(res => {
+         .subscribe( res => {
             this.resetForm(form);
             this.inicioselect();
             M.toast({ html: 'Guardado con Éxito' });
@@ -126,13 +150,14 @@ export class UsuariosComponent implements OnInit {
    resetForm(form?: NgForm) {
       if (form) {
          form.reset();
+         this.inicioselect();
       }
    }
 
-   inicio(){
-      if(this.id==1130584672){
-      this.router.navigate(['../admon']);
-      }else{
+   inicio() {
+      if (this.id == 1130584672) {
+         this.router.navigate(['../admon']);
+      } else {
          this.router.navigate(['../../inicio']);
       }
    }
