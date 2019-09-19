@@ -79,7 +79,9 @@ a{
 
 input:valid {
     background: white ;
+    color : black;
   }
   input:invalid {
+      color: black;
     background:red;
   }
