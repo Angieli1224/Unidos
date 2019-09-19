@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm, Form, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
@@ -36,7 +36,6 @@ export class SugerenciaComponent implements OnInit {
 
   };
 
-<<<<<<< HEAD
   ngOnInit(){
     this.iniciomodal();
   }
@@ -47,26 +46,6 @@ export class SugerenciaComponent implements OnInit {
 
  }
 
-=======
-  ngOnInit() {
-
-
-    this.iniciomodal();
- }
-
-iniciomodal() {
-  var elems = document.querySelectorAll('.modal');
-  var instances = M.Modal.init(elems, {});
-
-}
-
-modal() {
-  var elem = document.querySelectorAll('.modal');
-  var instance = M.Modal.getInstance(elem);
-  instance.open();
-}
-
->>>>>>> 73d5923473bc67e0312d0fd45677fe904d6ce63a
   addSugerencia(form: NgForm) {
     this.active.params.subscribe(val => {
       this.sugerenciaForm.controls['id_usuario'].setValue(val.id_usuario);
