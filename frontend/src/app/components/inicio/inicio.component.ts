@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+
+declare var M: any;
 
 @Component({
    selector: 'app-inicio',
@@ -10,7 +12,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
    styleUrls: ['./inicio.component.css']
 
 })
-export class InicioComponent {
+export class InicioComponent implements OnInit {
 
    loginForm: FormGroup;
 
@@ -25,25 +27,42 @@ export class InicioComponent {
 
    }
 
+   ngOnInit() {
+      this.loginForm.reset();
+   }
+
    acceder() {
+
+
       this.sUsuario.acceso(this.loginForm.value);
+
       this.sUsuario.$usuario.subscribe(val => {
+
          if (val) {
             // para admin
             if (val['identificacion'] == '1130584672' && val['contrasena'] == 'edilcali') {
                this.router.navigate(['../admon']); // cambiar rutas
+
             } else {
                console.log(this.loginForm.get('identificacion').value);
+
+               this.router.navigate(['../sugerencias/crear', val['identificacion']]);
                
-               this.router.navigate(['../sugerencias/crear',this.loginForm.get('identificacion').value]);
             }
          }
+
+
       });
-      
-      
-      
+
+
    }
 
-  
+
+
+
+
+
+
+
 
 }

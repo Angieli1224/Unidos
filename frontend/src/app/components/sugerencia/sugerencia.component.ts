@@ -13,19 +13,20 @@ declare var M: any;
   styleUrls: ['./sugerencia.component.css'],
   providers:[SugerenciaService]
 })
-export class SugerenciaComponent {
+export class SugerenciaComponent implements OnInit {
 
   sugerenciaForm: FormGroup;
   
   constructor(private sugerenciaService: SugerenciaService,private active: ActivatedRoute, private router:Router) {
 
     this.sugerenciaForm = new FormGroup({
-       nombre: new FormControl(null, Validators.required),
+       nombre: new FormControl(null),
        id_usuario: new FormControl(null, Validators.required),
-       telefono: new FormControl(null, Validators.required),
+       telefono: new FormControl(null),
        id_enlace: new FormControl(null),
        asunto: new FormControl(null, Validators.required),
-       descripcion: new FormControl(null, Validators.required)
+       descripcion: new FormControl(null, Validators.required),
+       estado:new FormControl(null)
     });
 
 
@@ -33,11 +34,21 @@ export class SugerenciaComponent {
 
   };
 
+  ngOnInit(){
+    this.iniciomodal();
+  }
+
+  iniciomodal() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {});
+
+ }
+
   addSugerencia(form: NgForm) {
     this.active.params.subscribe(val => {
       this.sugerenciaForm.controls['id_usuario'].setValue(val.id_usuario);
       console.log("Este es el id que envia" + val.id_usuario);
-      console.log("Este es el id otro que si " + this.sugerenciaForm.get('id_usuario').value);      
+          
       
    });
     this.sugerenciaService.postSugerencia(this.sugerenciaForm.value)

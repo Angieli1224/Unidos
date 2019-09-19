@@ -46,11 +46,23 @@
                 </form>
             </div>
             <br>
-            <button (click)="addSugerencia()" class="btn waves-effect waves-light btn1 right" type="button"
-                (click)="resetForm(sugerenciaForm)">Enviar<i class="material-icons right">markunread_mailbox</i></button>
+            <!-- <button (click)="addSugerencia()" class="btn waves-effect waves-light btn1 right" type="button"
+                (click)="resetForm(sugerenciaForm)">Enviar<i class="material-icons right">markunread_mailbox</i></button> -->
+                <button  data-target="modal1" class="btn modal-trigger right" >Enviar<i class="material-icons right">markunread_mailbox</i></button>
             <button class="btn waves-effect waves-light btn1 left" type="button"
                 [routerLink]="['../../../inicio']">Inicio<i class="material-icons right"></i></button>
 
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                       <h4>¿Seguro Desea Enviar y Guardar?</h4>
+                       <p>Aceptar para Enviar y Generar una nueva Sugerencia. <br>Cancelar para regresar y modificar.</p>
+                    </div>
+                    <div class="modal-footer">
+                       <a (click)="addSugerencia()"  class="modal-close waves-effect waves-green btn-flat" (click)="resetForm(sugerenciaForm)">Aceptar</a>
+                       <a   class="modal-close waves-effect waves-green btn-flat" >Cancelar</a>
+                    </div>
+                 </div>
         </div>
         <div class="row otro2">
             <div id="pie" class="col m12">

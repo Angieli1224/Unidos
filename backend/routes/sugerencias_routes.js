@@ -27,23 +27,26 @@ router.get('/', async (req, res) => {
 
 });
 
-router.post('/', async (req, res) => {
+router.post('/',  (req, res) => {
 
    let body = req.body;
 console.log("estes es el id usuario del servidor "+body['id_usuario']);
 
-   await Usuario.findOne({ identificacion: body['id_usuario'] }).exec().then(async usuario => {
+    Usuario.findOne({ identificacion: body['id_usuario'] }).exec().then( usuario => {
 
       body['id_enlace'] = usuario.id_enlace;
+      body['telefono'] = usuario.telefono;
+      body['estado'] = 'Pendiente';
+      body['nombre'] = usuario.nombre;
       console.log("Este es el usuario que se encontro "+usuario.id_enlace);
       
 
       let registro = new Sugerencia(body);
 
-      await registro.save().then(val => {
+       registro.save().then(val => { 
 
          if (!val) {
-            res.status(500).json({
+            res.status(400).json({
                mensaje: 'Ocurrió un error inesperado.',
                detalle: 'La base de datos no devolvió el registro creado.'
             });
@@ -55,14 +58,14 @@ console.log("estes es el id usuario del servidor "+body['id_usuario']);
 
       }).catch(error => {
          res.status(500).json({
-            mensaje: 'Ocurrió un error inesperado.',
+            mensaje: 'Ocurrió un error inesperado de guardar.',
             detalle: error
          });
       });
 
    }).catch(error => {
       res.status(500).json({
-         mensaje: 'Ocurrió un error inesperado.',
+         mensaje: 'Ocurrió un error inesperado de busqueda.',
          detalle: error
       });
    });
