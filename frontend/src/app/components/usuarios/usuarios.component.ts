@@ -104,12 +104,6 @@ export class UsuariosComponent implements OnInit {
 
    }
 
-   modal() {
-      var elem = document.querySelectorAll('.modal');
-      var instance = M.Modal.getInstance(elem);
-      instance.open();
-   }
-
 
    inicioselect() {
       var elems = document.querySelectorAll('select');

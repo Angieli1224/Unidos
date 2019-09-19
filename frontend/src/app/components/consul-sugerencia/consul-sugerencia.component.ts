@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import {SugerenciaService} from '../../services/sugerencia.service';
 import { Sugerencia } from 'src/app/models/sugerencia';
 
+declare var M: any;
+
 @Component({
   selector: 'app-consul-sugerencia',
   templateUrl: './consul-sugerencia.component.html',
@@ -11,16 +13,21 @@ import { Sugerencia } from 'src/app/models/sugerencia';
 })
 export class ConsulSugerenciaComponent implements OnInit {
 
-  
+  suge = new Sugerencia();
+
   constructor(private active: ActivatedRoute, private sugerenciaService: SugerenciaService,private router: Router) { }
 
 
   ngOnInit() {
 
    this.obtenerSugerencias();
+   this.iniciomodal();
 
   }
 
+  selectsuge(sugerencia:Sugerencia){
+    this.suge = sugerencia;
+  }
   
   mostrar() {
     
@@ -39,12 +46,17 @@ export class ConsulSugerenciaComponent implements OnInit {
     }); 
   };
 
-  eliminarSugerencias(sugerencia:Sugerencia){
-    this.sugerenciaService.DeleteSugerencias(sugerencia).subscribe(res =>{
+  eliminarSugerencias(){
+    this.sugerenciaService.DeleteSugerencias(this.suge).subscribe(res =>{
       this.obtenerSugerencias();  
        
     }); 
   };
  
+  iniciomodal() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {});
+
+ };
   
 }

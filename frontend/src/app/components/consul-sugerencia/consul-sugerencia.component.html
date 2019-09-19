@@ -20,7 +20,8 @@
                <li class="active"><a class="menu" [routerLink]="['../../admon/sugerencias']"><i
                         class="material-icons left">search</i>Sugerencias</a>
                </li>
-               <li><a class="menu" [routerLink]="['../../inicio']"><i class="material-icons left">close</i>Cerrar Sesión</a></li>
+               <li><a class="menu" [routerLink]="['../../inicio']"><i class="material-icons left">close</i>Cerrar
+                     Sesión</a></li>
             </ul>
          </div>
       </nav>
@@ -32,7 +33,7 @@
       <table class="responsive-table highlight">
          <thead>
             <tr>
-               
+
                <th>Nombre</th>
                <th>Cédula</th>
                <th>Teléfono</th>
@@ -40,7 +41,7 @@
                <th>Asunto</th>
                <th>descripcion</th>
                <th>Eliminar</th>
-                             
+
             </tr>
          </thead>
 
@@ -52,13 +53,31 @@
                <td>{{ sugerencia.id_enlace }}</td>
                <td>{{ sugerencia.asunto }}</td>
                <td>{{ sugerencia.descripcion }}</td>
-               <td>  <button type="button" class="btn right" (click)="eliminarSugerencias(sugerencia)">Eliminar</button> </td>
+               <td> <button (click)="selectsuge(sugerencia)" data-target="modal1" type="button" class="btn modal-trigger right">Eliminar<i
+                        class="material-icons right">delete_forever</i></button>
+
+
+               </td>
+              
+
             </tr>
+
          </tbody>
-
-
-
       </table>
+       <!-- Modal Structure -->
+       <div id="modal1" class="modal">
+         <div class="modal-content">
+            <h4>¿Seguro Desea Eliminar la Sugerencia?</h4>
+            <p>Aceptar para Eliminar la Sugerencia. <br>Cancelar para regresar.</p>
+         </div>
+         <div class="modal-footer">
+            <a (click)="eliminarSugerencias()"
+               class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+            <a class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+         </div>
+      </div>
+
+
 
 
       <div class="row">

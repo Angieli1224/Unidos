@@ -23,12 +23,12 @@ export class InicioComponent implements OnInit {
          contrasena: new FormControl(null, Validators.required)
       });
 
-      
+      this.loginForm.reset();      
 
    }
 
    ngOnInit() {
-      this.loginForm.reset();
+     
    }
 
    acceder() {
@@ -40,13 +40,21 @@ export class InicioComponent implements OnInit {
 
          if (val) {
             // para admin
-            if (val['identificacion'] == '1130584672' && val['contrasena'] == 'edilcali') {
+            // if (val['identificacion'] === '1130584672' && val['contrasena'] === 'edilcali')
+            if (this.loginForm.get('identificacion').value === '1130584672' && this.loginForm.get('contrasena').value === 'edilcali')  {
                this.router.navigate(['../admon']); // cambiar rutas
+               this.sUsuario.usuario.next(null);
+              this.loginForm.reset();
 
-            } else {
+            } else {if (this.loginForm.get('contrasena').value ===  val['contrasena'] ){
+
                console.log(this.loginForm.get('identificacion').value);
 
-               this.router.navigate(['../sugerencias/crear', val['identificacion']]);
+               this.router.navigate(['../sugerencias/crear',this.loginForm.get('identificacion').value]);
+               this.sUsuario.usuario.next(null);
+               this.loginForm.reset();
+            }
+              
                
             }
          }
