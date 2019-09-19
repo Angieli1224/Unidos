@@ -50,7 +50,17 @@
                 (click)="resetForm(sugerenciaForm)">Enviar<i class="material-icons right">markunread_mailbox</i></button>
             <button class="btn waves-effect waves-light btn1 left" type="button"
                 [routerLink]="['../../../inicio']">Inicio<i class="material-icons right"></i></button>
-
+                <!-- Modal Structure -->
+                <div id="modal2" class="modal">
+                    <div class="modal-content">s
+                       <h4>¿Deseas Guardar y Salir?</h4>
+                       <p>Aceptar para guardar y salir del registro. <br>Cancelar para guardar la sugerencia y registrar otro usuario.</p>
+                    </div>
+                    <div class="modal-footer">
+                       <a (click)="addSugerencia()"  class="modal-close waves-effect waves-green btn-flat" (click)="inicio()">Aceptar</a>
+                       <a  (click)="addSugerencia()" class="modal-close waves-effect waves-green btn-flat" (click)="resetForm(sugerenciaForm)">Cancelar</a>
+                    </div>
+                 </div>   
         </div>
         <div class="row otro2">
             <div id="pie" class="col m12">
