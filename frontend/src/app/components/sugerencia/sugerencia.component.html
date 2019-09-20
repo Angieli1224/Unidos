@@ -51,24 +51,28 @@
                 <button  data-target="modal1" class="btn modal-trigger right" >Enviar<i class="material-icons right">markunread_mailbox</i></button>
             <button class="btn waves-effect waves-light btn1 left" type="button"
                 [routerLink]="['../../../inicio']">Inicio<i class="material-icons right"></i></button>
-
+            </div>
                  <!-- Modal Structure -->
                 <div id="modal1" class="modal">
-                    <div class="modal-content">
-                       <h4>¿Seguro Desea Enviar y Guardar?</h4>
-                       <p>Aceptar para Enviar y Generar una nueva Sugerencia. <br>Cancelar para regresar y modificar.</p>
+                    <div class="modal-content" >
+                        <h4>¿Desea Enviar y Salir?</h4>
+                              <p>*Aceptar para guardar la sugerencia y volver al incio de la aplicación. 
+                                  <br>* Guardar para guardar la sugerencia y registrar  una nueva.
+                                  <br>* Cancelar para continuar diligenciando la sugerencia</p>
                     </div>
                     <div class="modal-footer">
-                       <a (click)="addSugerencia()"  class="modal-close waves-effect waves-green btn-flat" (click)="resetForm(sugerenciaForm)">Aceptar</a>
-                       <a   class="modal-close waves-effect waves-green btn-flat" >Cancelar</a>
+                       <button type="button" (click)="addSugerencia()" (click)="inicio()" class="modal-close waves-effect waves-green btn waves-effect waves-light  right" (click)="resetForm(sugerenciaForm)">Aceptar</button>
+                       <button  type="button" (click)="addSugerencia()"  (click)="resetForm(sugerenciaForm)" class="modal-close waves-effect waves-green btn waves-effect waves-light  right" style="margin: 3%">Guardar</button>
+                       <button  type="button"  class="modal-close waves-effect waves-green btn waves-effect waves-light  left" >Cancelar</button>
                     </div>
                  </div>
-        </div>
+       
         <div class="row otro2">
             <div id="pie" class="col m12">
                 <img class="responsive-img logos" src="../../../assets/fc.png" alt="logo">
                 <img class="responsive-img logos" src="../../../assets/insta.png" alt="logo">
             </div>
+      
         </div>
     </div>
 </div>

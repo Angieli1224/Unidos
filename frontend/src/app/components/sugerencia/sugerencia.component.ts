@@ -17,6 +17,7 @@ declare var M: any;
 export class SugerenciaComponent implements OnInit {
 
   sugerenciaForm: FormGroup;
+  id: any;
   
  
   constructor(private sugerenciaService: SugerenciaService,private active: ActivatedRoute, private router:Router) {
@@ -73,6 +74,15 @@ export class SugerenciaComponent implements OnInit {
   
     }
   };
+
+  inicio() {
+    if (this.id == 1130584672) {
+       this.router.navigate(['../admon']);
+    } else {
+       this.router.navigate(['../../inicio']);
+    }
+ }
+
 
   
 
