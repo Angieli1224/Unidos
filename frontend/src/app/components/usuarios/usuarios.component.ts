@@ -114,7 +114,14 @@ export class UsuariosComponent implements OnInit {
       if (this.usuarioForm.valid) {
          if (flag) {
             this.addUsuario(this.usuarioForm.value);
-            this.inicio();
+            
+            
+      if (this.usuarioForm.get('id_enlace').value == '1130584672') {
+         this.router.navigate(['../admon']);
+
+      }else{
+         this.inicio();
+      }
          } else {
             this.addUsuario(this.usuarioForm.value);
             this.resetForm(this.usuarioForm.value);
@@ -157,10 +164,6 @@ export class UsuariosComponent implements OnInit {
 
 
 
-      if (this.usuarioForm.get('id_enlace').value == '1130584672') {
-         this.router.navigate(['../admon']);
-
-      };
 
    }
 
