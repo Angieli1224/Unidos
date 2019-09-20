@@ -110,6 +110,24 @@ export class UsuariosComponent implements OnInit {
       var instances = M.FormSelect.init(elems, {});
    }
 
+   validarusuario(flag: boolean) {
+      if (this.usuarioForm.valid) {
+         if (flag) {
+            this.addUsuario(this.usuarioForm.value);
+            this.inicio();
+         } else {
+            this.addUsuario(this.usuarioForm.value);
+            this.resetForm(this.usuarioForm.value);
+         }
+
+
+      } else {
+         M.toast({ html: 'Faltan campos por diligenciar' });
+
+      }
+
+   }
+
    addUsuario(form?: NgForm) {
 
       var ciudad = document.getElementById('ciudad') as HTMLInputElement;
@@ -127,13 +145,18 @@ export class UsuariosComponent implements OnInit {
       var personas_cargo = document.getElementById('personas_cargo') as HTMLInputElement;
       this.usuarioForm.controls['personas_cargo'].setValue(personas_cargo.value);
 
+
+
       this.usuarioService.postUsuario(this.usuarioForm.value)
-         .subscribe( res => {
+         .subscribe(res => {
             this.resetForm(form);
             this.inicioselect();
             M.toast({ html: 'Guardado con Éxito' });
 
          });
+
+
+
       if (this.usuarioForm.get('id_enlace').value == '1130584672') {
          this.router.navigate(['../admon']);
 

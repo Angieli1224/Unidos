@@ -276,14 +276,14 @@
                         <!-- Modal Structure -->
                         <div id="modal1" class="modal">
                            <div class="modal-content">
-                              <h4>¿Deseas Guardar y Salir?</h4>
+                              <h4>¿Desea Guardar y Salir?</h4>
                               <h5>Elige alguna de estas opciones</h5>
                               <p>* Guardar y salir para guardar el registro y volver al incio de la aplicación. <br>* Guardar para guardar el registro y registrar otro usuario.<br>
                               * Cancelar para continuar diligenciando el registro</p>
                            </div>
                            <div class="modal-footer">
-                              <button type="button"  (click)="addUsuario()"  class="modal-close waves-effect waves-green btn waves-effect waves-light  right" style="margin-right: 3px" (click)="inicio()">Guardar y Salir</button>
-                              <button type="button"  (click)="addUsuario()" class="modal-close waves-effect waves-green btn waves-effect waves-light  right" (click)="resetForm(usuarioForm) "style="margin-right: 5px">Guardar</button>
+                              <button type="button" (click)="validarusuario(true)"  class="modal-close waves-effect waves-green btn waves-effect waves-light  right" style="margin-right: 3px" >Guardar y Salir</button>
+                              <button type="button" (click)="validarusuario(false)" class="modal-close waves-effect waves-green btn waves-effect waves-light  right" style="margin-right: 5px">Guardar</button>
                               <button type="button"  class="modal-close waves-effect waves-green btn waves-effect waves-light  left">Cancelar</button>
                            </div>
                         </div>
