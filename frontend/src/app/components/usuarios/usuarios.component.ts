@@ -124,7 +124,7 @@ export class UsuariosComponent implements OnInit {
       }
          } else {
             this.addUsuario(this.usuarioForm.value);
-            this.resetForm(this.usuarioForm.value);
+            this.usuarioForm.reset();
             this.inicioselect();
          }
 
