@@ -22,6 +22,7 @@ export class AdmonComponent implements OnInit {
   
   constructor(private active: ActivatedRoute, private usuariosService: UsuarioService ,private router: Router) { 
     this.usuariosXenlace = 0;
+    this.consultarUsuarios();
   }
 
   ngOnInit() {
