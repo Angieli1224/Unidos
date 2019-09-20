@@ -125,6 +125,7 @@ export class UsuariosComponent implements OnInit {
          } else {
             this.addUsuario(this.usuarioForm.value);
             this.resetForm(this.usuarioForm.value);
+            this.inicioselect();
          }
 
 
@@ -156,8 +157,7 @@ export class UsuariosComponent implements OnInit {
 
       this.usuarioService.postUsuario(this.usuarioForm.value)
          .subscribe(res => {
-            this.resetForm(form);
-            this.inicioselect();
+            
             M.toast({ html: 'Guardado con Éxito' });
 
          });
